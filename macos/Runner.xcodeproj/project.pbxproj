@@ -301,7 +301,7 @@
 				Flutter/ephemeral/tripwire,
 			);
 			outputFileListPaths = (
-				Flutter/ephemeral/FlutterOutputs.xcfilelist,
+				Flutter/ephemeral/Flutteputs.xcfilelist,
 			);
 			outputPaths = (
 			);

@@ -32,8 +32,8 @@ class _AuthPageState extends State<AuthPage> {
           children: <Widget>[
             Text(
               isSignIn
-                ? AppText.enText['welcome_text']!
-                : AppText.enText['choose-role']!,
+                  ? AppText.enText['welcome_text']!
+                  : AppText.enText['choose-role']!,
               style: const TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
@@ -41,9 +41,7 @@ class _AuthPageState extends State<AuthPage> {
             ),
             Config.spaceSmall,
             Text(
-              isSignIn
-                  ? AppText.enText['signIn_text']!
-                  : "",
+              isSignIn ? AppText.enText['signIn_text']! : "",
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,

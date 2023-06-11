@@ -1,7 +1,11 @@
+import 'package:home_tutor_app/components/sign_up_form.dart';
+
 import './main_layout.dart';
 import './models/auth_model.dart';
 import './screens/auth_page.dart';
 import './screens/booking_page.dart';
+import './screens/student_registration_page.dart';
+import './screens/teachers_registration_page.dart';
 import './screens/success_booked.dart';
 import './utils/config.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +58,9 @@ class MyApp extends StatelessWidget {
           'main': (context) => const MainLayout(),
           'booking_page': (context) => BookingPage(),
           'success_booking': (context) => const AppointmentBooked(),
+          'student_register':(context) =>  const StudentRegistrationPage(),
+          'teacher_register':(context) => const TeachersRegistrationPage(),
+
         },
       ),
     );
