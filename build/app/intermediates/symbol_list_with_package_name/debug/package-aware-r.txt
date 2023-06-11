@@ -144,6 +144,7 @@ id text
 id text2
 id time
 id title
+integer google_play_services_version
 integer status_bar_notification_info_maxnum
 layout custom_dialog
 layout notification_action
@@ -153,6 +154,8 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 mipmap ic_launcher
+raw firebase_common_keep
+string common_google_play_services_unknown_issue
 string status_bar_notification_info_overflow
 style LaunchTheme
 style NormalTheme

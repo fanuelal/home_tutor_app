@@ -10,5 +10,6 @@ class AppText {
     'signUp_text': 'Don\'t have an account?',
     'social-login': 'Or continue with social account',
     'forgot-password': 'Forgot Your Password?',
+    'choose-role':'Choose Your Role'
   };
 }

@@ -3,6 +3,7 @@ import 'package:home_tutor_app/components/sign_up_form.dart';
 import 'package:home_tutor_app/utils/text.dart';
 import 'package:flutter/material.dart';
 
+import '../components/role.dart';
 import '../utils/config.dart';
 
 class AuthPage extends StatefulWidget {
@@ -30,7 +31,9 @@ class _AuthPageState extends State<AuthPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              AppText.enText['welcome_text']!,
+              isSignIn
+                ? AppText.enText['welcome_text']!
+                : AppText.enText['choose-role']!,
               style: const TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
@@ -40,14 +43,14 @@ class _AuthPageState extends State<AuthPage> {
             Text(
               isSignIn
                   ? AppText.enText['signIn_text']!
-                  : AppText.enText['register_text']!,
+                  : "",
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Config.spaceSmall,
-            isSignIn ? const LoginForm() : SignUpForm(),
+            isSignIn ? const LoginForm() : const ChooseRole(),
             Config.spaceSmall,
             isSignIn
                 ? Center(
