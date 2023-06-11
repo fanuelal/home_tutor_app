@@ -5,13 +5,18 @@ class Student {
   int grade;
   String? imgUrl;
   String address;
+  String phone;
+  String email;
+  String? password;
   Student(
       {this.id,
       required this.firstName,
       required this.lastName,
       required this.grade,
       required this.address,
-      this.imgUrl});
+      this.imgUrl,
+      required this.email,
+      required this.phone});
 
   Map<String, dynamic> toJson() {
     return {
@@ -21,6 +26,8 @@ class Student {
       'grade': grade,
       'address': address,
       'imgUrl': imgUrl,
+      'email': email,
+      'phone': phone
     };
   }
 
@@ -32,6 +39,8 @@ class Student {
       grade: json['grade'],
       address: json['address'],
       imgUrl: json['imgUrl'],
+      phone: json['phone'],
+      email: json['email']
     );
   }
 }

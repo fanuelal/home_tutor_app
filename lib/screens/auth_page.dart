@@ -16,15 +16,16 @@ class _AuthPageState extends State<AuthPage> {
   bool isSignIn = true;
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     Config().init(context);
 //build login text field
     return Scaffold(
         body: Padding(
-      padding: const EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
         horizontal: 15,
         vertical: 15,
-      ),
-      child: SafeArea(
+            ),
+            child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,16 +66,16 @@ class _AuthPageState extends State<AuthPage> {
                   )
                 : Container(),
             const Spacer(),
-// Center(
-// child: Text(
-// AppText.enText['social-login']!,
-// style: TextStyle(
-// fontSize: 16,
-// fontWeight: FontWeight.normal,
-// color: Colors.grey.shade500,
-// ),
-// ),
-// ),
+        // Center(
+        // child: Text(
+        // AppText.enText['social-login']!,
+        // style: TextStyle(
+        // fontSize: 16,
+        // fontWeight: FontWeight.normal,
+        // color: Colors.grey.shade500,
+        // ),
+        // ),
+        // ),
             Config.spaceSmall,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +109,7 @@ class _AuthPageState extends State<AuthPage> {
             )
           ],
         ),
-      ),
-    ));
+            ),
+          ));
   }
 }

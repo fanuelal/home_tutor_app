@@ -11,21 +11,25 @@ class Teacher {
   String subject;
   String address;
   String status;
-
-  Teacher({
-    this.id,
-    required this.firstName,
-    required this.lastName,
-    required this.experience,
-    this.availableTime,
-    this.imgUrl,
-    this.rate = 0.0,
-    this.description,
-    required this.price,
-    required this.subject,
-    required this.address,
-    this.status = 'online',
-  });
+  String phone;
+  String email;
+  String? password;
+  Teacher(
+      {this.id,
+      required this.firstName,
+      required this.lastName,
+      required this.experience,
+      this.availableTime,
+      this.imgUrl,
+      this.rate = 0.0,
+      this.description,
+      required this.price,
+      required this.subject,
+      required this.address,
+      this.status = 'online',
+      required this.phone,
+      this.password,
+      required this.email});
 
   factory Teacher.fromJson(Map<String, dynamic> json) {
     return Teacher(
@@ -41,10 +45,12 @@ class Teacher {
       subject: json['subject'],
       address: json['address'],
       status: json['status'],
+      phone: json['phone'],
+      email: json['email']
     );
   }
 
-    Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'id': id,
       'firstName': firstName,
@@ -58,7 +64,8 @@ class Teacher {
       'subject': subject,
       'address': address,
       'status': status,
+      'phone': phone,
+      'email': email,
     };
   }
-
 }
