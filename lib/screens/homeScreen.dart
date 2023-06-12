@@ -8,8 +8,8 @@ class MyApp extends StatelessWidget {
         title: Row(
           children: [
             UserProfileWidget(),
-            SizedBox(width: 8),
-            Text('My App'),
+            const SizedBox(width: 8),
+            const Text('Choose Teacher'),
           ],
         ),
       ),

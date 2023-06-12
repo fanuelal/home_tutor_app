@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-class Auth extends ChangeNotifier{
+
+import '../models/student.dart';
+import '../models/teacher.dart';
+
+class Auth extends ChangeNotifier {
   String _token = '';
   late DateTime _expiryDate;
   String _userId = '';
@@ -12,7 +16,7 @@ class Auth extends ChangeNotifier{
   bool isAdmin = false;
   bool isAgent = false;
   bool get isAuth {
-    return token != null;
+    return token != '';
   }
 
   String get userId {
@@ -33,8 +37,29 @@ class Auth extends ChangeNotifier{
     userName = user[0];
   }
 
-  Future<void> _authenticate(
-      String email, String password, String segmentStr) async {
+  Future<void> teacherSignUp(Teacher teacher, String password, String userType,
+      BuildContext context) async {
+    await _authenticate(teacher.email, password, 'signUp', userType, context);
+    String baseURL =
+        'https://estudy-376aa-default-rtdb.firebaseio.com/teachers';
+    final userDataUrl = Uri.parse("$baseURL/$_userId.json?auth=$_token");
+    final usedData =
+        await http.put(userDataUrl, body: json.encode(teacher.toJson()));
+  }
+
+  Future<void> studentSignUp(Student student, String password, String userType,
+      BuildContext context) async {
+    await _authenticate(student.email, password, 'signUp', userType, context);
+    String baseURL =
+        'https://estudy-376aa-default-rtdb.firebaseio.com/students';
+    final userDataUrl = Uri.parse("$baseURL/$_userId.json?auth=$_token");
+    final usedData =
+        await http.put(userDataUrl, body: json.encode(student.toJson()));
+  }
+
+  Future<void> _authenticate(String email, String password, String segmentStr,
+      String userType, BuildContext context) async {
+    print('$email, $password, $userType');
     final url = Uri.parse(
         'https://identitytoolkit.googleapis.com/v1/accounts:$segmentStr?key=AIzaSyDA4ed21i8rSzRsBe18X1LF0lNpxfx-BsI');
     userEmail = email;
@@ -53,18 +78,19 @@ class Auth extends ChangeNotifier{
 
       final responseData = json.decode(response.body);
       if (responseData['error'] != null) {
-        throw responseData['error']['message'];
+        print(responseData['error']['message'].toString());
+        SnackBar snackBar = SnackBar(
+            content: Text(responseData['error']['message'].toString()));
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+        // throw responseData['error']['message'];
       }
+      print(responseData);
       // userEmail = email;
       _token = responseData['idToken'];
       _userId = responseData['localId'];
-      if (segmentStr == 'signUp') {
-        final roleUrl = Uri.parse(
-            "https://arkgift-3867d-default-rtdb.firebaseio.com/users/$_userId.json?auth=$_token");
-        final usedData = http.put(roleUrl,
-            body: json
-                .encode({'email': email, 'isAdmin': false, 'isAgent': false}));
-      }
+      String baseURL = '';
+
       _expiryDate = DateTime.now().add(
         Duration(
           seconds: int.parse(responseData['expiresIn']),
@@ -77,7 +103,8 @@ class Auth extends ChangeNotifier{
         'expiryDate': _expiryDate.toIso8601String()
       });
     } catch (error) {
-      throw error;
+      print(error);
+      // throw error;
     }
   }
 
@@ -87,25 +114,27 @@ class Auth extends ChangeNotifier{
       final roleUrl = Uri.parse(
           "https://arkgift-3867d-default-rtdb.firebaseio.com/users/$_userId.json?");
       final roleRes = await http.get(roleUrl);
-      
+
       isAdmin = json.decode(roleRes.body)['isTeacher'] ?? false;
     } catch (error) {
       print(error);
     }
   }
 
-    Future<void> signIn(String email, String password) async {
-    return _authenticate(email, password, 'signInWithPassword');
+  Future<void> signIn(String email, String password, String userType,
+      BuildContext context) async {
+    return _authenticate(
+        email, password, 'signInWithPassword', userType, context);
   }
 
-  Future<void> signUp(String email, String password) async {
-    return _authenticate(email, password, 'signUp');
-
+  Future<void> signUp(
+      String email, String password, String userType, BuildContext ctx) async {
+    return _authenticate(email, password, 'signUp', userType, ctx);
   }
 
   Future<void> Logout() async {
     _token = '';
-    // _expiryDate = '';
+    _expiryDate = DateTime.now();
     _userId = '';
     isAdmin = false;
     isAgent = false;
@@ -113,5 +142,4 @@ class Auth extends ChangeNotifier{
 
     notifyListeners();
   }
-
 }

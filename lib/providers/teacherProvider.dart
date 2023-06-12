@@ -4,14 +4,16 @@ import 'package:http/http.dart' as http;
 import '../models/teacher.dart';
 
 class TeacherProvider extends ChangeNotifier {
-  static const String baseURL = 'https://estudy-376aa-default-rtdb.firebaseio.com/teachers';
-
+  static const String baseURL =
+      'https://estudy-376aa-default-rtdb.firebaseio.com/teachers';
+  List<Teacher> teachers = [];
   Future<List<Teacher>> getTeachers() async {
     final response = await http.get(Uri.parse('$baseURL.json'));
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
-      List<Teacher> teachers =
+      List<Teacher> _teachers =
           data.map((json) => Teacher.fromJson(json)).toList();
+      teachers = _teachers;
       return teachers;
     } else {
       throw Exception('Failed to fetch teachers');
@@ -48,15 +50,14 @@ class TeacherProvider extends ChangeNotifier {
   }
 
   Future<void> updateRequestStatus(int requestId, String newStatus) async {
-  final url = '$baseURL/request/$requestId.json';
-  final response = await http.patch(
-    Uri.parse(url),
-    headers: {'Content-Type': 'application/json'},
-    body: jsonEncode({'status': newStatus}),
-  );
-  if (response.statusCode != 200) {
-    throw Exception('Failed to update request status');
+    final url = '$baseURL/request/$requestId.json';
+    final response = await http.patch(
+      Uri.parse(url),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'status': newStatus}),
+    );
+    if (response.statusCode != 200) {
+      throw Exception('Failed to update request status');
+    }
   }
-}
-
 }

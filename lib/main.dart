@@ -1,11 +1,17 @@
+import 'package:home_tutor_app/components/sign_up_form.dart';
+
 import './main_layout.dart';
 import './models/auth_model.dart';
 import './screens/auth_page.dart';
 import './screens/booking_page.dart';
+import './screens/student_registration_page.dart';
+import './screens/teachers_registration_page.dart';
 import './screens/success_booked.dart';
 import './utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'providers/auth.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,8 +26,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //define ThemeData here
-    return ChangeNotifierProvider<AuthModel>(
+    return MultiProvider(
+  providers: [
+    ChangeNotifierProvider<AuthModel>(
       create: (context) => AuthModel(),
+    ),
+    ChangeNotifierProvider<Auth>(create: (context) => Auth(),)
+  ],
       child: MaterialApp(
         navigatorKey: navigatorKey,
         title: 'Flutter Teacher App',
@@ -54,6 +65,9 @@ class MyApp extends StatelessWidget {
           'main': (context) => const MainLayout(),
           'booking_page': (context) => BookingPage(),
           'success_booking': (context) => const AppointmentBooked(),
+          'student_register':(context) =>  const StudentRegistrationPage(),
+          'teacher_register':(context) => const TeachersRegistrationPage(),
+
         },
       ),
     );

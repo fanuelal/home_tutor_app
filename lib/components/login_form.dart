@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../providers/auth.dart';
 import '../utils/config.dart';
 
 class LoginForm extends StatefulWidget {
@@ -22,6 +23,8 @@ class _LoginFormState extends State<LoginForm> {
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
   bool obsecurePass = true;
+  String? selectedUserType;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -70,52 +73,66 @@ class _LoginFormState extends State<LoginForm> {
                           ))),
           ),
           Config.spaceSmall,
-          Consumer<AuthModel>(
+          Container(
+            padding: EdgeInsets.only(left: 20),
+            width: Config.screenWidth,
+            height: 60,
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+
+            decoration: BoxDecoration(
+              // color: Colors.black, // Background color
+              border: Border.all(color: Colors.black), // Border color
+              borderRadius: BorderRadius.circular(5), // Border radius
+            ),
+            child: DropdownButton<String>(
+              value: selectedUserType,
+              hint: const Text('Select user type',
+                  style: TextStyle(color: Colors.grey)),
+              items: ['Student', 'Teacher'].map((String userType) {
+                return DropdownMenuItem<String>(
+                  value: userType,
+                  child: Text(userType),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedUserType = newValue;
+                });
+              },
+              dropdownColor: Colors.white, // Dropdown menu background color
+              icon: const Icon(Icons.arrow_drop_down,
+                  color: Colors.grey), // Dropdown icon color
+              style: const TextStyle(color: Colors.grey), // Dropdown text color
+              underline: Container(),
+            ),
+          ),
+          Consumer<Auth>(
             builder: (context, auth, child) {
               return Button(
                 width: double.infinity,
                 title: 'Sign In',
-                disable: false, // Add the 'disable' property here
+                disable: false,
                 onPressed: () async {
                   try {
-                    //login here
-                    final token = await DioProvider()
-                        .getToken(_emailController.text, _passController.text);
-
-                    // If the request was successful, token will contain the response data
-// otherwise, DioError will be thrown and caught in the catch block
-                    if (token != null) {
-                      //grab user data here
-                      final SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
-                      final tokenValue = prefs.getString('token') ?? '';
-
-                      if (tokenValue.isNotEmpty && tokenValue != '') {
-                        //get user data
-                        final response =
-                            await DioProvider().getUser(tokenValue);
-                        if (response != null) {
-                          setState(() {
-                            //json decode
-                            Map<String, dynamic> appointment = {};
-                            final user = json.decode(response);
-
-                            //check if any appointment today
-                            for (var teacherData in user['teacher']) {
-                              //if there is appointment return for today
-                              if (teacherData['appointments'] != null) {
-                                appointment = teacherData;
-                              }
-                            }
-
-                            auth.loginSuccess(user, appointment);
-                            MyApp.navigatorKey.currentState!.pushNamed('main');
-                          });
-                        }
-                      }
+                    if (selectedUserType == null) {
+                      errorDialog(context, 'Please select a user type.');
+                    } else {
+                      auth.signIn(_emailController.text, _passController.text,
+                          selectedUserType ?? '', context);
                     }
-                  } catch (e) {
-                    print('Error: $e');
+
+                    // final token = await DioProvider()
+                    //     .getToken(_emailController.text, _passController.text);
+
+                    // if (token != null) {
+                    //   //grab user data here
+                    //   final SharedPreferences prefs =
+                    //       await SharedPreferences.getInstance();
+                    //   final tokenValue = prefs.getString('token') ?? '';
+
+                    // }
+                  } catch (error) {
+                    print('Error: $error');
                     // Handle errors here
                   }
                 },
@@ -124,6 +141,26 @@ class _LoginFormState extends State<LoginForm> {
           )
         ],
       ),
+    );
+  }
+
+  Future<dynamic> errorDialog(BuildContext context, String error) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Error'),
+          content: Text(error),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
