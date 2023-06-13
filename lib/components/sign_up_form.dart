@@ -26,6 +26,7 @@ class _StudentSignUpFormState extends State<StudentSignUpForm> {
   final _passController = TextEditingController();
   final _phoneController = TextEditingController();
   final _gradeController = TextEditingController();
+
   // firstName: _nameController.text,
   //                 lastName: _lnameController.text,
   //                 grade: int.parse(_gradeController.text),
@@ -33,6 +34,7 @@ class _StudentSignUpFormState extends State<StudentSignUpForm> {
   //                 email: _emailController.text,
   //                 phone: _phoneController.text,
   bool obsecurePass = true;
+  bool isLoagging = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -160,16 +162,24 @@ class _StudentSignUpFormState extends State<StudentSignUpForm> {
                           email: _emailController.text,
                           phone: _phoneController.text,
                         );
+                        setState(() {
+                          isLoagging = true;
+                        });
                         await auth.studentSignUp(
                             student, _passController.text, 'Student', context);
+                            setState(() {
+                          isLoagging = false;
+                        });
                         if (auth.token != '') {
-                          MyApp.navigatorKey.currentState!.pushNamed('main');
+                          MyApp.navigatorKey.currentState!
+                              .pushNamed('mainStudent');
                         }
                       },
                       disable: false,
                     );
                   },
-                )
+                ),
+                isLoagging? const CircularProgressIndicator() : const SizedBox.shrink(),
               ],
             ),
           ),
