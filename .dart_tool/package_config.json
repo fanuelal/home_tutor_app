@@ -248,6 +248,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "rate",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/rate-0.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "rating_dialog",
       "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/rating_dialog-2.0.4",
       "packageUri": "lib/",
@@ -380,7 +386,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-06-12T02:05:52.569059Z",
+  "generated": "2023-06-12T20:41:24.087974Z",
   "generator": "pub",
   "generatorVersion": "2.19.1"
 }

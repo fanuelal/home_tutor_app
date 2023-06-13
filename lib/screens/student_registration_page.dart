@@ -17,69 +17,65 @@ class _StudentRegistrationPageState extends State<StudentRegistrationPage> {
   Widget build(BuildContext context) {
     Config().init(context);
 //build login text field
+final size = MediaQuery.of(context).size;
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-        vertical: 15,
-      ),
-      child: SizedBox(
-        height: Config.screenHeight,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                AppText.enText['welcome_text']!,
-                style: const TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
-                ),
+        body: SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(
+            15, 15, 15, MediaQuery.of(context).viewInsets.bottom),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Config.spaceMedium,
+            Text(
+              AppText.enText['welcome_text']!,
+              style: const TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
               ),
-              Config.spaceSmall,
-              Text(
-                
-                     AppText.enText['register_text']!,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+            ),
+            Config.spaceSmall,
+            Text(
+              AppText.enText['register_text']!,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
-              Config.spaceSmall,
-              StudentSignUpForm(),
-              Config.spaceSmall,
-              const Spacer(),
-        
-              Config.spaceSmall,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                     AppText.enText['registered_text']!,
+            ),
+            Config.spaceSmall,
+            SizedBox(height: size.height * 0.7, child: StudentSignUpForm()),
+            Config.spaceSmall,
+            // const Spacer(),
+
+            Config.spaceSmall,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  AppText.enText['registered_text']!,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.grey.shade500,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/');
+                  },
+                  child: const Text(
+                    'Sign In',
                     style: TextStyle(
                       fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.grey.shade500,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed('/');
-                    },
-                    child: const Text(
-                       'Sign In',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
+                )
+              ],
+            )
+          ],
         ),
       ),
     ));

@@ -10,8 +10,14 @@ import './screens/success_booked.dart';
 import './utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'providers/request.dart';
+import 'providers/studentProvider.dart';
+import 'providers/teacherProvider.dart';
+import 'screens/homeScreenStudent.dart';
 import 'providers/auth.dart';
+import 'screens/homeScreenTeacher.dart';
+import 'screens/studentProfile.dart';
+import 'screens/teacherProfile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,12 +33,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //define ThemeData here
     return MultiProvider(
-  providers: [
-    ChangeNotifierProvider<AuthModel>(
-      create: (context) => AuthModel(),
-    ),
-    ChangeNotifierProvider<Auth>(create: (context) => Auth(),)
-  ],
+      providers: [
+        ChangeNotifierProvider<AuthModel>(
+          create: (context) => AuthModel(),
+        ),
+        ChangeNotifierProvider<Auth>(
+          create: (context) => Auth(),
+        ),
+                ChangeNotifierProvider<RequestProvider>(
+          create: (context) => RequestProvider(),
+        ),
+        ChangeNotifierProvider<StudentProvider>(
+          create: (context) => StudentProvider(),
+        ),
+        ChangeNotifierProvider<TeacherProvider>(
+          create: (context) => TeacherProvider(),
+        ),
+      ],
       child: MaterialApp(
         navigatorKey: navigatorKey,
         title: 'Flutter Teacher App',
@@ -62,12 +79,14 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const AuthPage(),
-          'main': (context) => const MainLayout(),
+          'mainStudent': (context) => HomeScreenStudent(),
+          'mainTeacher': (context) => HomeScreenTeacher(),
+          'studentProfile': (context) => StudentProfile(),
+          'teacherProfile': (context) => TeacherProfile(),
           'booking_page': (context) => BookingPage(),
           'success_booking': (context) => const AppointmentBooked(),
-          'student_register':(context) =>  const StudentRegistrationPage(),
-          'teacher_register':(context) => const TeachersRegistrationPage(),
-
+          'student_register': (context) => const StudentRegistrationPage(),
+          'teacher_register': (context) => const TeachersRegistrationPage(),
         },
       ),
     );

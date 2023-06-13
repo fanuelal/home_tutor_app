@@ -7,8 +7,8 @@ import '../models/teacher.dart';
 
 class Auth extends ChangeNotifier {
   String _token = '';
-  late DateTime _expiryDate;
-  String _userId = '';
+  late DateTime _expiryDate = DateTime.now();
+  late String _userId;
   // Timer _autoTimer;
   String userEmail = "user@gmail.com";
   String userName = "user";
@@ -24,9 +24,7 @@ class Auth extends ChangeNotifier {
   }
 
   String get token {
-    if (_expiryDate != null &&
-        _expiryDate.isAfter(DateTime.now()) &&
-        _token != null) {
+    if (_expiryDate.isAfter(DateTime.now()) && _token != '') {
       return _token;
     }
     return '';
@@ -42,9 +40,10 @@ class Auth extends ChangeNotifier {
     await _authenticate(teacher.email, password, 'signUp', userType, context);
     String baseURL =
         'https://estudy-376aa-default-rtdb.firebaseio.com/teachers';
-    final userDataUrl = Uri.parse("$baseURL/$_userId.json?auth=$_token");
+    final userDataUrl = Uri.parse("$baseURL/$_userId.json");
     final usedData =
         await http.put(userDataUrl, body: json.encode(teacher.toJson()));
+    currentTeacher = teacher;
   }
 
   Future<void> studentSignUp(Student student, String password, String userType,
@@ -52,9 +51,35 @@ class Auth extends ChangeNotifier {
     await _authenticate(student.email, password, 'signUp', userType, context);
     String baseURL =
         'https://estudy-376aa-default-rtdb.firebaseio.com/students';
-    final userDataUrl = Uri.parse("$baseURL/$_userId.json?auth=$_token");
+    print(_userId);
+    if (_userId == null) return;
+    final userDataUrl = Uri.parse("$baseURL/$_userId.json");
     final usedData =
         await http.put(userDataUrl, body: json.encode(student.toJson()));
+    currentStudent = student;
+  }
+
+  late Student currentStudent;
+  late Teacher currentTeacher;
+
+  Future<void> getCurrentUser(String userId, String userType) async {
+    if (userType == 'Student') {
+      String studentBaseUrl =
+          'https://estudy-376aa-default-rtdb.firebaseio.com/students/$userId.json';
+      final response = await http.get(Uri.parse(studentBaseUrl));
+      final responseData = json.decode(response.body);
+      if (json.decode(response.body) == null) return;
+      currentStudent = Student.fromJson(responseData);
+      currentStudent.id = userId;
+    } else {
+      String teacherBaseUrl =
+          'https://estudy-376aa-default-rtdb.firebaseio.com/teachers/$userId.json';
+      final response = await http.get(Uri.parse(teacherBaseUrl));
+      final responseData = json.decode(response.body);
+      currentTeacher = Teacher.fromJson(responseData);
+      currentTeacher.id = userId;
+    }
+    notifyListeners();
   }
 
   Future<void> _authenticate(String email, String password, String segmentStr,
@@ -80,15 +105,19 @@ class Auth extends ChangeNotifier {
       if (responseData['error'] != null) {
         print(responseData['error']['message'].toString());
         SnackBar snackBar = SnackBar(
+            backgroundColor: Colors.red,
             content: Text(responseData['error']['message'].toString()));
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
+        return;
         // throw responseData['error']['message'];
       }
       print(responseData);
       // userEmail = email;
       _token = responseData['idToken'];
       _userId = responseData['localId'];
+      if (segmentStr == 'signInWithPassword') {
+        getCurrentUser(_userId, userType);
+      }
       String baseURL = '';
 
       _expiryDate = DateTime.now().add(

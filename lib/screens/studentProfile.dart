@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:home_tutor_app/providers/auth.dart';
+import 'package:provider/provider.dart';
 
 import '../models/student.dart';
+import '../providers/studentProvider.dart';
 
 class StudentProfile extends StatelessWidget {
-  final Student student;
+  // final Student? student;
 
-  const StudentProfile({required this.student});
+  // const StudentProfile({required this.student});
 
   @override
   Widget build(BuildContext context) {
+    Student currentStudent =
+        Provider.of<Auth>(context, listen: false).currentStudent;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Student Profile'),
@@ -26,14 +31,12 @@ class StudentProfile extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 80,
-                  backgroundImage: student.imgUrl != null
-                      ? NetworkImage(student.imgUrl!)
-                      : null,
-                  child: student.imgUrl == null ? Icon(Icons.person) : null,
+                  backgroundImage: NetworkImage(currentStudent.imgUrl ?? ''),
+                  child: currentStudent.imgUrl == null ? Icon(Icons.person) : null,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  '${student.firstName} ${student.lastName}',
+                  '${currentStudent.firstName} ${currentStudent.lastName}',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -41,22 +44,22 @@ class StudentProfile extends StatelessWidget {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Grade: ${student.grade}',
+                  'Grade: ${currentStudent.grade}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Address: ${student.address}',
+                  'Address: ${currentStudent.address}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Email: ${student.email}',
+                  'Email: ${currentStudent?.email}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Phone: ${student.phone}',
+                  'Phone: ${currentStudent?.phone}',
                   style: TextStyle(fontSize: 16),
                 ),
               ],

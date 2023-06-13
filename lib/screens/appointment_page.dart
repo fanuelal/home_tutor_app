@@ -20,20 +20,20 @@ class _AppointmentPageState extends State<AppointmentPage> {
   List<dynamic> schedules = [];
 
   //get appointments details
-  Future<void> getAppointments() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final token = prefs.getString('token') ?? '';
-    final appointment = await DioProvider().getAppointments(token);
-    if (appointment != 'Error') {
-      setState(() {
-        schedules = json.decode(appointment);
-      });
-    }
-  }
+  // Future<void> getAppointments() async {
+  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   final token = prefs.getString('token') ?? '';
+  //   final appointment = await DioProvider().getAppointments(token);
+  //   if (appointment != 'Error') {
+  //     setState(() {
+  //       schedules = json.decode(appointment);
+  //     });
+  //   }
+  // }
 
   @override
   void initState() {
-    getAppointments();
+    // getAppointments();
     super.initState();
   }
 

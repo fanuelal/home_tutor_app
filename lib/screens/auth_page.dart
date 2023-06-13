@@ -72,7 +72,7 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         )
                       : Container(),
-                  const Spacer(),
+                  // const Spacer(),
                   // Center(
                   // child: Text(
                   // AppText.enText['social-login']!,

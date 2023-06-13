@@ -1,5 +1,5 @@
 class Teacher {
-  int? id;
+  String? id;
   String firstName;
   String lastName;
   int experience;
@@ -39,7 +39,7 @@ class Teacher {
       experience: json['experience'],
       availableTime: json['availableTime'],
       imgUrl: json['imgUrl'],
-      rate: json['rate'],
+      rate: json['rate'].toDouble(),
       description: json['description'],
       price: json['price'],
       subject: json['subject'],

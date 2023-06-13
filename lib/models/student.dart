@@ -1,5 +1,5 @@
 class Student {
-  int? id;
+  String? id;
   String firstName;
   String lastName;
   int grade;

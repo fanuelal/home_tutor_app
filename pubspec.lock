@@ -320,6 +320,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
+  rate:
+    dependency: "direct main"
+    description:
+      name: rate
+      sha256: "4e70e817f5c8332da50b3ac88c66f6006bfa2b5e3ebc8133521349908ac76867"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   rating_dialog:
     dependency: "direct main"
     description:

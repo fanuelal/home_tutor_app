@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../models/student.dart';
+import '../models/teacher.dart';
 import '../providers/auth.dart';
 import '../utils/config.dart';
 
@@ -24,7 +26,7 @@ class _LoginFormState extends State<LoginForm> {
   final _passController = TextEditingController();
   bool obsecurePass = true;
   String? selectedUserType;
-
+  bool isLogging = false;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -78,7 +80,6 @@ class _LoginFormState extends State<LoginForm> {
             width: Config.screenWidth,
             height: 60,
             margin: const EdgeInsets.symmetric(horizontal: 10),
-
             decoration: BoxDecoration(
               // color: Colors.black, // Background color
               border: Border.all(color: Colors.black), // Border color
@@ -117,8 +118,27 @@ class _LoginFormState extends State<LoginForm> {
                     if (selectedUserType == null) {
                       errorDialog(context, 'Please select a user type.');
                     } else {
-                      auth.signIn(_emailController.text, _passController.text,
-                          selectedUserType ?? '', context);
+                      setState(() {
+                        isLogging = true;
+                      });
+
+                      await auth.signIn(
+                          _emailController.text,
+                          _passController.text,
+                          selectedUserType ?? '',
+                          context);
+                      setState(() {
+                        isLogging = false;
+                      });
+                      Student student;
+                      Teacher teacher;
+                      if (auth.token != '') {
+                        selectedUserType == 'Student'
+                            ? MyApp.navigatorKey.currentState!
+                                .pushNamed('mainStudent')
+                            : MyApp.navigatorKey.currentState!
+                                .pushNamed('mainTeacher');
+                      }
                     }
 
                     // final token = await DioProvider()
@@ -138,7 +158,8 @@ class _LoginFormState extends State<LoginForm> {
                 },
               );
             },
-          )
+          ),
+           isLogging ? CircularProgressIndicator(): SizedBox.shrink(),
         ],
       ),
     );
