@@ -38,6 +38,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
         .getTeachers();
     _allMyRequest = await Provider.of<RequestProvider>(context, listen: false)
         .getAllStudentRequests();
+    print(_allMyRequest);
     setState(() {
       _isLoading = false;
     });
@@ -45,11 +46,12 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
   }
 
   Request? isRequested(Teacher teacher) {
-    int index = _allMyRequest.indexWhere((req) {
-      print("${req.requestReciver} == ${teacher.id}");
+    int index = -1;
+    index = _allMyRequest.indexWhere((req) {
+      print("requestReciver: ${req.requestReciver}");
+      print('teacherId: ${teacher.id}');
       return req.requestReciver == teacher.id;
     });
-
     print("${index}");
     if (index > -1) {
       return _allMyRequest[index];
@@ -69,7 +71,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
       }).toList();
     });
   }
-  
+
   @override
   void dispose() {
     _searchController.dispose();
@@ -134,11 +136,9 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                             final teacher = _filteredTeachers[index];
                             Request? isReq = isRequested(teacher);
 
-                            bool isClicked = false;
+                            // bool isClicked = false;
                             if (isReq != null) {
-                              setState(() {
-                                isClicked = true;
-                              });
+                              teacher.requested = true;
                             }
                             return InkWell(
                               onTap: () {
@@ -152,7 +152,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                               child: Card(
                                 child: ListTile(
                                   tileColor:
-                                      isReq == null ? null : Colors.green,
+                                      teacher.requested ? Colors.green : null,
                                   leading: CircleAvatar(
                                     backgroundImage: NetworkImage(
                                       teacher.imgUrl ??
@@ -185,12 +185,12 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                           status: 'pending',
                                         );
                                         setState(() {
-                                          isClicked = true;
+                                          teacher.requested = true;
                                         });
-                                        print(isClicked);
+                                        // print(t);
                                         await request.createRequest(_request);
                                       },
-                                      icon: isClicked
+                                      icon: teacher.requested
                                           ? const Icon(Icons.timelapse)
                                           : Icon(Icons.send),
                                       label: isReq == null

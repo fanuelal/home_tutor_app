@@ -14,6 +14,7 @@ class Teacher {
   String phone;
   String email;
   String? password;
+  bool requested;
   Teacher(
       {this.id,
       required this.firstName,
@@ -29,25 +30,25 @@ class Teacher {
       this.status = 'online',
       required this.phone,
       this.password,
-      required this.email});
+      required this.email,
+      this.requested = false});
 
   factory Teacher.fromJson(Map<String, dynamic> json) {
     return Teacher(
-      id: json['id'],
-      firstName: json['firstName'],
-      lastName: json['lastName'],
-      experience: json['experience'],
-      availableTime: json['availableTime'],
-      imgUrl: json['imgUrl'],
-      rate: json['rate'].toDouble(),
-      description: json['description'],
-      price: json['price'],
-      subject: json['subject'],
-      address: json['address'],
-      status: json['status'],
-      phone: json['phone'],
-      email: json['email']
-    );
+        id: json['id'],
+        firstName: json['firstName'],
+        lastName: json['lastName'],
+        experience: json['experience'],
+        availableTime: json['availableTime'],
+        imgUrl: json['imgUrl'],
+        rate: json['rate'].toDouble(),
+        description: json['description'],
+        price: json['price'],
+        subject: json['subject'],
+        address: json['address'],
+        status: json['status'],
+        phone: json['phone'],
+        email: json['email']);
   }
 
   Map<String, dynamic> toJson() {

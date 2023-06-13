@@ -76,9 +76,13 @@ class RequestProvider extends ChangeNotifier {
 
   List<Request> getCurrentStudentRequests(List<Request> reqs) {
     Auth auth = Auth();
-    List<Request> currentUserReq =
-        reqs.where((req) => req.requestSender == auth.userId).toList();
-    return currentUserReq;
+    if (auth.userId != null || auth.userId != '') {
+      List<Request> currentUserReq =
+          reqs.where((req) => req.requestSender == auth.userId).toList();
+      return currentUserReq;
+    }
+    print("auth.userId: ${auth.userId}");
+    return [];
   }
 
   Future<List<Request>> getAllStudentRequests() async {
@@ -88,11 +92,14 @@ class RequestProvider extends ChangeNotifier {
     if (jsonDecode(response.body) == null) return [];
     if (response.statusCode == 200) {
       final Map<String, dynamic>? data = jsonDecode(response.body);
+      print(data);
       if (data != null) {
         List<Request> requests = data.entries
             .map((entry) => Request.fromJson(entry.value..['id'] = entry.key))
             .toList();
+        print(requests);
         List<Request> currentUserReq = getCurrentStudentRequests(requests);
+        print(currentUserReq);
         currentUserRequests = currentUserReq;
         return currentUserReq;
       }
