@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.doctor_appointment_app"
+3    package="com.example.home_tutor"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -22,9 +22,9 @@
 19-->[androidx.core:core:1.6.0] C:\Users\25198\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
 21        android:icon="@mipmap/ic_launcher"
-22        android:label="doctor_appointment_app" >
+22        android:label="home_tutor" >
 23        <activity
-24            android:name="com.example.doctor_appointment_app.MainActivity"
+24            android:name="com.example.home_tutor.MainActivity"
 25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 26            android:exported="true"
 27            android:hardwareAccelerated="true"
@@ -89,7 +89,7 @@
 72-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\0e1050c9ea3d14c684726c42c0eef9a5\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
 73            android:name="com.google.firebase.provider.FirebaseInitProvider"
 73-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\0e1050c9ea3d14c684726c42c0eef9a5\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
-74            android:authorities="com.example.doctor_appointment_app.firebaseinitprovider"
+74            android:authorities="com.example.home_tutor.firebaseinitprovider"
 74-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\0e1050c9ea3d14c684726c42c0eef9a5\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
 75            android:directBootAware="true"
 75-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\0e1050c9ea3d14c684726c42c0eef9a5\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43

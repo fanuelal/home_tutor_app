@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.example.doctor_appointment_app",
+  "applicationId": "com.example.home_tutor",
   "variantName": "debug",
   "elements": []
 }

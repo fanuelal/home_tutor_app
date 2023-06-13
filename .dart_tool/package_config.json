@@ -8,6 +8,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "args",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "async",
       "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.10.0",
       "packageUri": "lib/",
@@ -24,6 +30,18 @@
       "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/characters-1.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "checked_yaml",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/checked_yaml-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "cli_util",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/cli_util-0.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "clock",
@@ -104,10 +122,10 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "flutter_lints",
-      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.1",
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_launcher_icons-0.13.1",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "flutter_rating_bar",
@@ -146,6 +164,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "image",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.0.17",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
@@ -158,10 +182,10 @@
       "languageVersion": "2.16"
     },
     {
-      "name": "lints",
-      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/lints-2.0.1",
+      "name": "json_annotation",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/json_annotation-4.8.1",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.19"
     },
     {
       "name": "lottie",
@@ -214,6 +238,12 @@
     {
       "name": "path_provider_windows",
       "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.1.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/petitparser-5.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -380,13 +410,25 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "yaml",
+      "rootUri": "file:///C:/Users/25198/AppData/Local/Pub/Cache/hosted/pub.dev/yaml-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "home_tutor_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-06-12T20:41:24.087974Z",
+  "generated": "2023-06-13T08:05:22.651435Z",
   "generator": "pub",
   "generatorVersion": "2.19.1"
 }

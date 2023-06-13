@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.doctor_appointment_app"
+    package="com.example.home_tutor"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -19,9 +19,9 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="doctor_appointment_app" >
+        android:label="home_tutor" >
         <activity
-            android:name="com.example.doctor_appointment_app.MainActivity"
+            android:name="com.example.home_tutor.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:exported="true"
             android:hardwareAccelerated="true"
@@ -71,7 +71,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.example.doctor_appointment_app.firebaseinitprovider"
+            android:authorities="com.example.home_tutor.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />

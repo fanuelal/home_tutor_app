@@ -29,11 +29,11 @@ class TeacherProfile extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 80,
-                   backgroundImage: NetworkImage(currentStudent?.imgUrl ?? ''),
+                   backgroundImage: NetworkImage(currentStudent.imgUrl ?? ''),
                 ),
                 SizedBox(height: 16),
                 Text(
-                  '${currentStudent?.firstName} ${currentStudent?.lastName}',
+                  '${currentStudent.firstName} ${currentStudent.lastName}',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -41,27 +41,27 @@ class TeacherProfile extends StatelessWidget {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Experience: ${currentStudent?.experience} years',
+                  'Experience: ${currentStudent.experience} years',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Subject: ${currentStudent?.subject}',
+                  'Subject: ${currentStudent.subject}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Address: ${currentStudent?.address}',
+                  'Address: ${currentStudent.address}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Email: ${currentStudent?.email}',
+                  'Email: ${currentStudent.email}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Phone: ${currentStudent?.phone}',
+                  'Phone: ${currentStudent.phone}',
                   style: TextStyle(fontSize: 16),
                 ),
               ],

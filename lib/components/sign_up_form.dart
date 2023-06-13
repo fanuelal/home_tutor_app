@@ -167,7 +167,7 @@ class _StudentSignUpFormState extends State<StudentSignUpForm> {
                         });
                         await auth.studentSignUp(
                             student, _passController.text, 'Student', context);
-                            setState(() {
+                        setState(() {
                           isLoagging = false;
                         });
                         if (auth.token != '') {
@@ -179,7 +179,9 @@ class _StudentSignUpFormState extends State<StudentSignUpForm> {
                     );
                   },
                 ),
-                isLoagging? const CircularProgressIndicator() : const SizedBox.shrink(),
+                isLoagging
+                    ? const CircularProgressIndicator()
+                    : const SizedBox.shrink(),
               ],
             ),
           ),
@@ -208,6 +210,7 @@ class _TeacherSignUpFormState extends State<TeacherSignUpForm> {
   final _priceController = TextEditingController();
   final _subjectController = TextEditingController();
   bool obsecurePass = true;
+  bool isLogging = false;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -353,8 +356,14 @@ class _TeacherSignUpFormState extends State<TeacherSignUpForm> {
                     phone: _phoneController.text,
                     subject: _subjectController.text,
                   );
+                  setState(() {
+                    isLogging = true;
+                  });
                   await auth.teacherSignUp(
                       teacher, _passController.text, 'Teacher', context);
+                  setState((){
+                  isLogging = false;
+                  });
                   if (auth.token != '') {
                     MyApp.navigatorKey.currentState!.pushNamed('mainTeacher');
                   }
@@ -362,7 +371,10 @@ class _TeacherSignUpFormState extends State<TeacherSignUpForm> {
                 disable: false,
               );
             },
-          )
+          ),
+          isLogging
+              ? const CircularProgressIndicator()
+              : const SizedBox.shrink(),
         ],
       ),
     );

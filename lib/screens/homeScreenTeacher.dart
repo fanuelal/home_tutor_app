@@ -127,22 +127,23 @@ class _HomeScreenStudentState extends State<HomeScreenTeacher> {
                                     backgroundColor: MaterialStateProperty
                                         .resolveWith<Color>(
                                       (states) {
-                                        if (teacher.status == 'accepted') {
-                                          return Colors
-                                              .green;
+                                        if (teacher.isAccepted) {
+                                          return Colors.green;
                                         } else {
-                                          return Colors
-                                              .blue; 
+                                          return Colors.blue;
                                         }
                                       },
                                     ),
                                   ),
                                   onPressed: () async {
+                                    setState(() {
+                                      teacher.isAccepted = true;
+                                    });
                                     await req.updateRequestStatus(
                                         teacher.id ?? '', 'accepted');
                                   },
-                                  icon: const Icon(Icons.check),
-                                  label: const Text('Accept'),
+                                  icon:  Icon(teacher.isAccepted ? Icons.question_mark : Icons.check),
+                                  label:  Text(teacher.isAccepted ? 'Accepted': 'Accept'),
                                 ),
                               ),
                             );

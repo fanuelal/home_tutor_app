@@ -1,4 +1,4 @@
-com.example.doctor_appointment_app
+com.example.home_tutor
 attr activityAction
 attr activityName
 attr alpha

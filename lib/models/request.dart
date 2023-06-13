@@ -10,7 +10,7 @@ class Request {
   String address;
   int grade;
   String status;
-
+  bool isAccepted;
   Request({
     this.id,
     required this.requestSender,
@@ -23,6 +23,7 @@ class Request {
     required this.address,
     required this.grade,
     required this.status,
+    this.isAccepted = false
   });
 
   factory Request.fromJson(Map<String, dynamic> json) {
@@ -33,28 +34,29 @@ class Request {
       teacherName: json['teacherName'] ?? '',
       subject: json['subject'] ?? '',
       teacherImg: json['teacherImg'] ?? '',
-      studentImg: json['studentImg']?? '',
+      studentImg: json['studentImg'] ?? '',
       studentName: json['studentName'] ?? '',
       address: json['address'] ?? '',
       grade: json['grade'] ?? '',
       status: json['status'] ?? '',
+      isAccepted: json['isAccepted'] ?? false
     );
   }
 
-Map<String, dynamic> toJson() {
-  return {
-    'id': id,
-    'requestSender': requestSender,
-    'requestReciver': requestReciver,
-    'teacherName': teacherName,
-    'subject': subject,
-    'teacherImg': teacherImg,
-    'studentImg': studentImg,
-    'studentName': studentName,
-    'address': address,
-    'grade': grade,
-    'status': status,
-  };
-}
-
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'requestSender': requestSender,
+      'requestReciver': requestReciver,
+      'teacherName': teacherName,
+      'subject': subject,
+      'teacherImg': teacherImg,
+      'studentImg': studentImg,
+      'studentName': studentName,
+      'address': address,
+      'grade': grade,
+      'status': status,
+      'isAccepted': isAccepted
+    };
+  }
 }

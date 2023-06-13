@@ -8,7 +8,7 @@ import '../models/teacher.dart';
 class Auth extends ChangeNotifier {
   String _token = '';
   late DateTime _expiryDate = DateTime.now();
-  late String _userId;
+  late String _userId = '';
   // Timer _autoTimer;
   String userEmail = "user@gmail.com";
   String userName = "user";
@@ -84,7 +84,7 @@ class Auth extends ChangeNotifier {
 
   Future<void> _authenticate(String email, String password, String segmentStr,
       String userType, BuildContext context) async {
-    print('$email, $password, $userType');
+    // print('$email, $password, $userType');
     final url = Uri.parse(
         'https://identitytoolkit.googleapis.com/v1/accounts:$segmentStr?key=AIzaSyDA4ed21i8rSzRsBe18X1LF0lNpxfx-BsI');
     userEmail = email;
@@ -102,7 +102,7 @@ class Auth extends ChangeNotifier {
       );
 
       final responseData = json.decode(response.body);
-      if (responseData['error'] != null) {
+      if (responseData['error'] != null || responseData['localId'] == null) {
         print(responseData['error']['message'].toString());
         SnackBar snackBar = SnackBar(
             backgroundColor: Colors.red,

@@ -1,6 +1,6 @@
 {
-    "name": "doctor_appointment_app",
-    "short_name": "doctor_appointment_app",
+    "name": "home_tutor",
+    "short_name": "home_tutor",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

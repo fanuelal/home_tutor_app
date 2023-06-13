@@ -44,7 +44,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
     _filteredTeachers = _allTeachers;
   }
 
-  String isRequested(Teacher teacher) {
+  Request? isRequested(Teacher teacher) {
     int index = _allMyRequest.indexWhere((req) {
       print("${req.requestReciver} == ${teacher.id}");
       return req.requestReciver == teacher.id;
@@ -52,9 +52,9 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
 
     print("${index}");
     if (index > -1) {
-      return _allMyRequest[index].status;
+      return _allMyRequest[index];
     } else {
-      return '';
+      return null;
     }
   }
 
@@ -69,7 +69,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
       }).toList();
     });
   }
-
+  
   @override
   void dispose() {
     _searchController.dispose();
@@ -132,10 +132,10 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                           itemCount: _filteredTeachers.length,
                           itemBuilder: (context, index) {
                             final teacher = _filteredTeachers[index];
-                            String _isReq = isRequested(teacher);
-                            print(_isReq);
+                            Request? isReq = isRequested(teacher);
+
                             bool isClicked = false;
-                            if (_isReq != '') {
+                            if (isReq != null) {
                               setState(() {
                                 isClicked = true;
                               });
@@ -151,7 +151,8 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                               },
                               child: Card(
                                 child: ListTile(
-                                  tileColor: _isReq == '' ? null : Colors.green,
+                                  tileColor:
+                                      isReq == null ? null : Colors.green,
                                   leading: CircleAvatar(
                                     backgroundImage: NetworkImage(
                                       teacher.imgUrl ??
@@ -165,14 +166,10 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                     builder: (context, request, child) =>
                                         ElevatedButton.icon(
                                       onPressed: () async {
-                                        setState(() {
-                                          isClicked = true;
-                                        });
                                         Student cStud = Provider.of<Auth>(
                                                 context,
                                                 listen: false)
                                             .currentStudent;
-                                        print("${cStud.id} ${teacher.id}");
                                         Request _request = Request(
                                           address: cStud.address,
                                           requestSender: cStud.id ?? '',
@@ -187,14 +184,18 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                           grade: cStud.grade,
                                           status: 'pending',
                                         );
+                                        setState(() {
+                                          isClicked = true;
+                                        });
+                                        print(isClicked);
                                         await request.createRequest(_request);
                                       },
                                       icon: isClicked
-                                          ? Icon(Icons.timelapse)
+                                          ? const Icon(Icons.timelapse)
                                           : Icon(Icons.send),
-                                      label: isClicked
-                                          ? Text(_isReq)
-                                          : Text('Request'),
+                                      label: isReq == null
+                                          ? Text(isReq?.status ?? '')
+                                          : const Text('Request'),
                                     ),
                                   ),
                                 ),

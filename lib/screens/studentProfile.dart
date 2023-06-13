@@ -54,12 +54,12 @@ class StudentProfile extends StatelessWidget {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Email: ${currentStudent?.email}',
+                  'Email: ${currentStudent.email}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Phone: ${currentStudent?.phone}',
+                  'Phone: ${currentStudent.phone}',
                   style: TextStyle(fontSize: 16),
                 ),
               ],
