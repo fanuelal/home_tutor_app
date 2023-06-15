@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
 import '../models/student.dart';
 import '../models/teacher.dart';
 
@@ -84,10 +83,11 @@ class Auth extends ChangeNotifier {
 
   Future<void> _authenticate(String email, String password, String segmentStr,
       String userType, BuildContext context) async {
-    // print('$email, $password, $userType');
+    print('$email, $password, $userType');
     final url = Uri.parse(
         'https://identitytoolkit.googleapis.com/v1/accounts:$segmentStr?key=AIzaSyDA4ed21i8rSzRsBe18X1LF0lNpxfx-BsI');
     userEmail = email;
+    print('user email is ${userEmail}');
     usernameExtractor();
     try {
       final response = await http.post(
@@ -100,8 +100,9 @@ class Auth extends ChangeNotifier {
           },
         ),
       );
-
+      print("correct untill now");
       final responseData = json.decode(response.body);
+      print('this code is updated ${responseData}');
       if (responseData['error'] != null || responseData['localId'] == null) {
         print(responseData['error']['message'].toString());
         SnackBar snackBar = SnackBar(
@@ -109,8 +110,8 @@ class Auth extends ChangeNotifier {
             content: Text(responseData['error']['message'].toString()));
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
         return;
-        // throw responseData['error']['message'];
       }
+      print("where is error");
       print(responseData);
       // userEmail = email;
       _token = responseData['idToken'];
@@ -132,7 +133,7 @@ class Auth extends ChangeNotifier {
         'expiryDate': _expiryDate.toIso8601String()
       });
     } catch (error) {
-      print(error);
+      print(error.toString());
       // throw error;
     }
   }

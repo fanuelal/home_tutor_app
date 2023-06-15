@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 class ChooseRole extends StatefulWidget {
   const ChooseRole({super.key});
-
   @override
   State<ChooseRole> createState() => _ChooseRoleState();
 }
@@ -33,7 +32,6 @@ class _ChooseRoleState extends State<ChooseRole> {
             },
           ),
         ),
-
       ]),
       Row(children: [
         Container(

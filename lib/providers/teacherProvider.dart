@@ -14,11 +14,11 @@ class TeacherProvider extends ChangeNotifier {
       final Map<String, dynamic> jsonData = jsonDecode(response.body);
       List<String> teacherId = jsonData.keys.toList();
       print(teacherId);
-List<Teacher> _teachers = jsonData.entries.map((entry) {
-  String id = entry.key;
-  dynamic json = entry.value;
-  return Teacher.fromJson({...json, 'id': id});
-}).toList();
+      List<Teacher> _teachers = jsonData.entries.map((entry) {
+        String id = entry.key;
+        dynamic json = entry.value;
+        return Teacher.fromJson({...json, 'id': id});
+      }).toList();
       teachers = _teachers;
 
       return _teachers;

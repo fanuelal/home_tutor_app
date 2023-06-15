@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "571460887304",
+    "firebase_url": "https://estudy-376aa-default-rtdb.firebaseio.com",
+    "project_id": "estudy-376aa",
+    "storage_bucket": "estudy-376aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571460887304:android:968e4302e2ed62756442bd",
+        "android_client_info": {
+          "package_name": "com.example.home_tutor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571460887304-uhiajs9ljukqjs15hceaa901fo5n538s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL1ZPilaiDtYJJpShOdqbQm26Q2rwin-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571460887304-uhiajs9ljukqjs15hceaa901fo5n538s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

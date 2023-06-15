@@ -142,8 +142,12 @@ class _HomeScreenStudentState extends State<HomeScreenTeacher> {
                                     await req.updateRequestStatus(
                                         teacher.id ?? '', 'accepted');
                                   },
-                                  icon:  Icon(teacher.isAccepted ? Icons.check:Icons.question_mark ),
-                                  label:  Text(teacher.isAccepted ? 'Accepted': 'Accept'),
+                                  icon: Icon(teacher.isAccepted
+                                      ? Icons.check
+                                      : Icons.question_mark),
+                                  label: Text(teacher.isAccepted
+                                      ? 'Accepted'
+                                      : 'Accept'),
                                 ),
                               ),
                             );

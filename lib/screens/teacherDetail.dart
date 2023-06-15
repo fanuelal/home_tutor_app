@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:rate/rate.dart';
 import '../models/teacher.dart';
 
-
 class TeacherDetail extends StatelessWidget {
   final Teacher teacher;
 
-   TeacherDetail({required this.teacher});
+  TeacherDetail({required this.teacher});
   @override
   Widget build(BuildContext context) {
-      // Teacher teacher =
-      //   Provider.of<Auth>(context, listen: false).currentTeacher;
+    // Teacher teacher =
+    //   Provider.of<Auth>(context, listen: false).currentTeacher;
     return Scaffold(
       appBar: AppBar(
         title: Text('Teacher Profile'),
@@ -28,18 +27,19 @@ class TeacherDetail extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 80,
-                   backgroundImage: NetworkImage(teacher.imgUrl ?? 'https://cdn.vectorstock.com/i/preview-1x/50/63/logo-teacher-mascot-cartoon-style-vector-46355063.jpg'),
+                  backgroundImage: NetworkImage(teacher.imgUrl ??
+                      'https://cdn.vectorstock.com/i/preview-1x/50/63/logo-teacher-mascot-cartoon-style-vector-46355063.jpg'),
                 ),
                 SizedBox(height: 16),
                 Rate(
-    iconSize: 40,
-    color: Colors.green,
-    allowHalf: true,
-    allowClear: true,
-    initialValue: teacher.rate,
-    readOnly: false,
-    onChange: (value) => print(value),
-),
+                  iconSize: 40,
+                  color: Colors.green,
+                  allowHalf: true,
+                  allowClear: true,
+                  initialValue: teacher.rate,
+                  readOnly: false,
+                  onChange: (value) => print(value),
+                ),
                 SizedBox(height: 16),
                 Text(
                   '${teacher.firstName} ${teacher.lastName}',

@@ -118,10 +118,6 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
   }
 }
 
-
-
-
-
 class Teacher {
   final int? id;
   final String firstName;

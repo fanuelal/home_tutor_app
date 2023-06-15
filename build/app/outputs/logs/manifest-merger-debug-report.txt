@@ -1,0 +1,254 @@
+-- Merging decision tree log ---
+application
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:3:4-33:19
+MERGED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:24:5-37:19
+MERGED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:24:5-37:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/aderaw/.gradle/caches/transforms-3/bddf8f7cb97c4d6c8969f780aa3b1881/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/aderaw/.gradle/caches/transforms-3/bddf8f7cb97c4d6c8969f780aa3b1881/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/aderaw/.gradle/caches/transforms-3/81d7cd07d8865cdf0ad08eaef96c063c/transformed/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/aderaw/.gradle/caches/transforms-3/81d7cd07d8865cdf0ad08eaef96c063c/transformed/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/aderaw/.gradle/caches/transforms-3/8fd47409066427c257afb82b384bc757/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/aderaw/.gradle/caches/transforms-3/8fd47409066427c257afb82b384bc757/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/aderaw/.gradle/caches/transforms-3/16d334c486cbdec77958d3d22ef782e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/aderaw/.gradle/caches/transforms-3/16d334c486cbdec77958d3d22ef782e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+	android:name
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+manifest
+ADDED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
+MERGED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
+MERGED from [:shared_preferences_android] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
+MERGED from [:flutter_plugin_android_lifecycle] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.window:window-java:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/21b26ef90e71324700151bde7e8603b7/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/aderaw/.gradle/caches/transforms-3/bddf8f7cb97c4d6c8969f780aa3b1881/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/aderaw/.gradle/caches/transforms-3/81d7cd07d8865cdf0ad08eaef96c063c/transformed/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/aderaw/.gradle/caches/transforms-3/8fd47409066427c257afb82b384bc757/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/aderaw/.gradle/caches/transforms-3/5131069a74de4699d8095baf873b54b9/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aderaw/.gradle/caches/transforms-3/ba6d04d58a10f2c6173835a799a8b5ff/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/aderaw/.gradle/caches/transforms-3/c6d11f52e4e8081f9a64e739aa1dac6d/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/aderaw/.gradle/caches/transforms-3/c4248e0c6a7af08c45a5561bab54f521/transformed/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /home/aderaw/.gradle/caches/transforms-3/1ec724f0c82c66d5a38599bb5375d747/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aderaw/.gradle/caches/transforms-3/1a022a6c191e5cda22847650232353f8/transformed/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aderaw/.gradle/caches/transforms-3/120453716371826550a03abd10e878c7/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aderaw/.gradle/caches/transforms-3/8eb26f0aa86cc48c11242d7a197c2cab/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aderaw/.gradle/caches/transforms-3/bc3a9a67b8aecd29439312d810d3ba60/transformed/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/aderaw/.gradle/caches/transforms-3/2d02471870aa316b096e6926a6a97b8f/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aderaw/.gradle/caches/transforms-3/a99786fe7a03c7a48497ad344868eff5/transformed/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/aderaw/.gradle/caches/transforms-3/16d334c486cbdec77958d3d22ef782e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.firebase:firebase-components:17.1.0] /home/aderaw/.gradle/caches/transforms-3/883ffee6f2c118e0f8ada59340be1b0c/transformed/jetified-firebase-components-17.1.0/AndroidManifest.xml:15:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aderaw/.gradle/caches/transforms-3/bb86a14d026a27f02ef3281a7e476e26/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/aderaw/.gradle/caches/transforms-3/7b0449fa7552e8a8a339afd91dd38861/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml:1:1-8:12
+	package
+		ADDED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:2:5-37
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:1-34:12
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences_android] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/21b26ef90e71324700151bde7e8603b7/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/21b26ef90e71324700151bde7e8603b7/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/aderaw/.gradle/caches/transforms-3/bddf8f7cb97c4d6c8969f780aa3b1881/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/aderaw/.gradle/caches/transforms-3/bddf8f7cb97c4d6c8969f780aa3b1881/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/aderaw/.gradle/caches/transforms-3/81d7cd07d8865cdf0ad08eaef96c063c/transformed/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/aderaw/.gradle/caches/transforms-3/81d7cd07d8865cdf0ad08eaef96c063c/transformed/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/aderaw/.gradle/caches/transforms-3/8fd47409066427c257afb82b384bc757/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/aderaw/.gradle/caches/transforms-3/8fd47409066427c257afb82b384bc757/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.1.0] /home/aderaw/.gradle/caches/transforms-3/5131069a74de4699d8095baf873b54b9/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/aderaw/.gradle/caches/transforms-3/5131069a74de4699d8095baf873b54b9/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aderaw/.gradle/caches/transforms-3/ba6d04d58a10f2c6173835a799a8b5ff/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/aderaw/.gradle/caches/transforms-3/ba6d04d58a10f2c6173835a799a8b5ff/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/aderaw/.gradle/caches/transforms-3/c6d11f52e4e8081f9a64e739aa1dac6d/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/aderaw/.gradle/caches/transforms-3/c6d11f52e4e8081f9a64e739aa1dac6d/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/aderaw/.gradle/caches/transforms-3/c4248e0c6a7af08c45a5561bab54f521/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/aderaw/.gradle/caches/transforms-3/c4248e0c6a7af08c45a5561bab54f521/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /home/aderaw/.gradle/caches/transforms-3/1ec724f0c82c66d5a38599bb5375d747/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/aderaw/.gradle/caches/transforms-3/1ec724f0c82c66d5a38599bb5375d747/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aderaw/.gradle/caches/transforms-3/1a022a6c191e5cda22847650232353f8/transformed/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/aderaw/.gradle/caches/transforms-3/1a022a6c191e5cda22847650232353f8/transformed/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aderaw/.gradle/caches/transforms-3/120453716371826550a03abd10e878c7/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/aderaw/.gradle/caches/transforms-3/120453716371826550a03abd10e878c7/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aderaw/.gradle/caches/transforms-3/8eb26f0aa86cc48c11242d7a197c2cab/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/aderaw/.gradle/caches/transforms-3/8eb26f0aa86cc48c11242d7a197c2cab/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aderaw/.gradle/caches/transforms-3/bc3a9a67b8aecd29439312d810d3ba60/transformed/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/aderaw/.gradle/caches/transforms-3/bc3a9a67b8aecd29439312d810d3ba60/transformed/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] /home/aderaw/.gradle/caches/transforms-3/2d02471870aa316b096e6926a6a97b8f/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/aderaw/.gradle/caches/transforms-3/2d02471870aa316b096e6926a6a97b8f/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aderaw/.gradle/caches/transforms-3/a99786fe7a03c7a48497ad344868eff5/transformed/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/aderaw/.gradle/caches/transforms-3/a99786fe7a03c7a48497ad344868eff5/transformed/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/aderaw/.gradle/caches/transforms-3/16d334c486cbdec77958d3d22ef782e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/aderaw/.gradle/caches/transforms-3/16d334c486cbdec77958d3d22ef782e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-components:17.1.0] /home/aderaw/.gradle/caches/transforms-3/883ffee6f2c118e0f8ada59340be1b0c/transformed/jetified-firebase-components-17.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-components:17.1.0] /home/aderaw/.gradle/caches/transforms-3/883ffee6f2c118e0f8ada59340be1b0c/transformed/jetified-firebase-components-17.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aderaw/.gradle/caches/transforms-3/bb86a14d026a27f02ef3281a7e476e26/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/aderaw/.gradle/caches/transforms-3/bb86a14d026a27f02ef3281a7e476e26/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/aderaw/.gradle/caches/transforms-3/7b0449fa7552e8a8a339afd91dd38861/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/aderaw/.gradle/caches/transforms-3/7b0449fa7552e8a8a339afd91dd38861/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml:7:5-66
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:26:5-67
+	android:name
+		ADDED from /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/android/app/src/debug/AndroidManifest.xml:7:22-64
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:32:9-36:35
+MERGED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:32:9-36:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:31:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:36:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:34:13-43
+	android:name
+		ADDED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-126
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
+ADDED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-77
+queries
+ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
+intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
+ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
+action#android.intent.action.GET_CONTENT
+ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
+	android:name
+		ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
+data
+ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+	android:mimeType
+		ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:25:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:25:22-76
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:33:17-107
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58

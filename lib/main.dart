@@ -1,5 +1,4 @@
 import 'package:home_tutor_app/components/sign_up_form.dart';
-
 import './main_layout.dart';
 import './models/auth_model.dart';
 import './screens/auth_page.dart';
@@ -18,9 +17,15 @@ import 'providers/auth.dart';
 import 'screens/homeScreenTeacher.dart';
 import 'screens/studentProfile.dart';
 import 'screens/teacherProfile.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -40,7 +45,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<Auth>(
           create: (context) => Auth(),
         ),
-                ChangeNotifierProvider<RequestProvider>(
+        ChangeNotifierProvider<RequestProvider>(
           create: (context) => RequestProvider(),
         ),
         ChangeNotifierProvider<StudentProvider>(
