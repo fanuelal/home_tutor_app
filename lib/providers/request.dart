@@ -26,15 +26,28 @@ class RequestProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> createRequest(Request request) async {
+  Future<void> createRequest(Request request, BuildContext context) async {
     final url = '$baseURL/request.json';
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode(request.toJson()),
-    );
-    currentUserRequests.add(request);
-    print(json.decode(response.body));
+    List<Request> isCreatedBefore = currentUserRequests
+        .where((req) =>
+            req.requestReciver == request.requestReciver &&
+            request.requestSender == req.requestSender)
+        .toList();
+    if (isCreatedBefore.isEmpty) {
+      final response = await http.post(
+        Uri.parse(url),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(request.toJson()),
+      );
+
+      currentUserRequests.add(request);
+      print(json.decode(response.body));
+    } else {
+      SnackBar snackBar = SnackBar(
+          backgroundColor: Colors.red,
+          content: Text('Requested this teacher before'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
     // if (response.statusCode != 201) {
     //   throw Exception('Failed to create request');
     // }
@@ -74,31 +87,35 @@ class RequestProvider extends ChangeNotifier {
     throw Exception('Failed to fetch requests');
   }
 
-  List<Request> getCurrentStudentRequests(List<Request> reqs) {
-    Auth auth = Auth();
-    if (auth.userId != null || auth.userId != '') {
-      List<Request> currentUserReq =
-          reqs.where((req) => req.requestSender == auth.userId).toList();
+  List<Request> getCurrentStudentRequests(List<Request> reqs, String userId) {
+    // final auth = Provider.of(context).;
+    print("getCurrentStudentRequests.....  email: ${userId}");
+    if (userId != null || userId != '') {
+      List<Request> currentUserReq = reqs.where((req) {
+        print(req.studentName);
+        return req.requestSender == userId;
+      }).toList();
       return currentUserReq;
     }
-    print("auth.userId: ${auth.userId}");
+    print("auth.userId: ${userId}");
     return [];
   }
 
-  Future<List<Request>> getAllStudentRequests() async {
+  Future<List<Request>> getAllStudentRequests(String userId) async {
     const url = '$baseURL/request.json';
     final response = await http.get(Uri.parse(url));
 
     if (jsonDecode(response.body) == null) return [];
     if (response.statusCode == 200) {
       final Map<String, dynamic>? data = jsonDecode(response.body);
-      print(data);
+      // print(data);
       if (data != null) {
         List<Request> requests = data.entries
             .map((entry) => Request.fromJson(entry.value..['id'] = entry.key))
             .toList();
-        print(requests);
-        List<Request> currentUserReq = getCurrentStudentRequests(requests);
+        print(requests.length);
+        List<Request> currentUserReq =
+            getCurrentStudentRequests(requests, userId);
         print(currentUserReq);
         currentUserRequests = currentUserReq;
         return currentUserReq;

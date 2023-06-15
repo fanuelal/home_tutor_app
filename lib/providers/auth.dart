@@ -87,7 +87,7 @@ class Auth extends ChangeNotifier {
     final url = Uri.parse(
         'https://identitytoolkit.googleapis.com/v1/accounts:$segmentStr?key=AIzaSyDA4ed21i8rSzRsBe18X1LF0lNpxfx-BsI');
     userEmail = email;
-    print('user email is ${userEmail}');
+    // print('user email is ${userEmail}');
     usernameExtractor();
     try {
       final response = await http.post(
@@ -100,9 +100,8 @@ class Auth extends ChangeNotifier {
           },
         ),
       );
-      print("correct untill now");
       final responseData = json.decode(response.body);
-      print('this code is updated ${responseData}');
+      print('responseData local id ${responseData['localId']}');
       if (responseData['error'] != null || responseData['localId'] == null) {
         print(responseData['error']['message'].toString());
         SnackBar snackBar = SnackBar(
@@ -111,8 +110,8 @@ class Auth extends ChangeNotifier {
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
         return;
       }
-      print("where is error");
-      print(responseData);
+      // print("where is error");
+      print(responseData['localId']);
       // userEmail = email;
       _token = responseData['idToken'];
       _userId = responseData['localId'];
@@ -126,30 +125,19 @@ class Auth extends ChangeNotifier {
           seconds: int.parse(responseData['expiresIn']),
         ),
       );
-      notifyListeners();
       final userData = json.encode({
         'token': _token,
         'userId': userId,
         'expiryDate': _expiryDate.toIso8601String()
       });
+      notifyListeners();
     } catch (error) {
       print(error.toString());
       // throw error;
     }
   }
 
-  Future<void> userRole() async {
-    print("role identifier class called");
-    try {
-      final roleUrl = Uri.parse(
-          "https://arkgift-3867d-default-rtdb.firebaseio.com/users/$_userId.json?");
-      final roleRes = await http.get(roleUrl);
-
-      isAdmin = json.decode(roleRes.body)['isTeacher'] ?? false;
-    } catch (error) {
-      print(error);
-    }
-  }
+  
 
   Future<void> signIn(String email, String password, String userType,
       BuildContext context) async {
