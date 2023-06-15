@@ -186,6 +186,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                           studentName:
                                               '${cStud.firstName} ${cStud.lastName}',
                                           grade: cStud.grade,
+                                          created_at: DateTime.now(),
                                           status: 'pending',
                                         );
                                         setState(() {

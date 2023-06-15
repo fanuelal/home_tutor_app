@@ -52,6 +52,23 @@ class _HomeScreenStudentState extends State<HomeScreenTeacher> {
     super.dispose();
   }
 
+  String formatTimeDifference(DateTime dateTime) {
+    DateTime now = DateTime.now();
+    Duration difference = now.difference(dateTime);
+
+    if (difference.inDays > 0) {
+      return '${difference.inDays} day${difference.inDays > 1 ? 's' : ''} ago';
+    } else if (difference.inHours > 0) {
+      return '${difference.inHours} hour${difference.inHours > 1 ? 's' : ''} ago';
+    } else if (difference.inMinutes > 0) {
+      return '${difference.inMinutes} minute${difference.inMinutes > 1 ? 's' : ''} ago';
+    } else if (difference.inSeconds > 0) {
+      return '${difference.inSeconds} second${difference.inSeconds > 1 ? 's' : ''} ago';
+    } else {
+      return 'Just now';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,44 +127,50 @@ class _HomeScreenStudentState extends State<HomeScreenTeacher> {
                           itemCount: _filteredRequests.length,
                           itemBuilder: (context, index) {
                             final teacher = _filteredRequests[index];
-                            return ListTile(
-                              leading: CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                  teacher.studentImg != ''
-                                      ? teacher.studentImg
-                                      : 'https://logowik.com/content/uploads/images/810_student.jpg',
-                                ),
-                              ),
-                              title: Text('${teacher.studentName}'),
-                              subtitle: Text(teacher.subject),
-                              trailing: Consumer<RequestProvider>(
-                                builder: (ctx, req, child) =>
-                                    ElevatedButton.icon(
-                                  style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty
-                                        .resolveWith<Color>(
-                                      (states) {
-                                        if (teacher.isAccepted) {
-                                          return Colors.green;
-                                        } else {
-                                          return Colors.blue;
-                                        }
-                                      },
-                                    ),
+                            return InkWell(
+                              onTap: (){
+                                
+                              },
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                    teacher.studentImg != ''
+                                        ? teacher.studentImg
+                                        : 'https://logowik.com/content/uploads/images/810_student.jpg',
                                   ),
-                                  onPressed: () async {
-                                    setState(() {
-                                      teacher.isAccepted = true;
-                                    });
-                                    await req.updateRequestStatus(
-                                        teacher.id ?? '', 'accepted');
-                                  },
-                                  icon: Icon(teacher.isAccepted
-                                      ? Icons.check
-                                      : Icons.question_mark),
-                                  label: Text(teacher.isAccepted
-                                      ? 'Accepted'
-                                      : 'Accept'),
+                                ),
+                                title: Text('${teacher.studentName}'),
+                                subtitle: Text(
+                                    "${teacher.subject}  - ${formatTimeDifference(teacher.created_at)}"),
+                                trailing: Consumer<RequestProvider>(
+                                  builder: (ctx, req, child) =>
+                                      ElevatedButton.icon(
+                                    style: ButtonStyle(
+                                      backgroundColor: MaterialStateProperty
+                                          .resolveWith<Color>(
+                                        (states) {
+                                          if (teacher.isAccepted) {
+                                            return Colors.green;
+                                          } else {
+                                            return Colors.blue;
+                                          }
+                                        },
+                                      ),
+                                    ),
+                                    onPressed: () async {
+                                      setState(() {
+                                        teacher.isAccepted = true;
+                                      });
+                                      await req.updateRequestStatus(
+                                          teacher.id ?? '', 'accepted');
+                                    },
+                                    icon: Icon(teacher.isAccepted
+                                        ? Icons.check
+                                        : Icons.question_mark),
+                                    label: Text(teacher.isAccepted
+                                        ? 'Accepted'
+                                        : 'Accept'),
+                                  ),
                                 ),
                               ),
                             );
