@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:home_tutor_app/providers/auth.dart';
 import 'package:provider/provider.dart';
 
@@ -167,42 +168,64 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                       '${teacher.firstName} ${teacher.lastName}'),
                                   subtitle: Text(teacher.subject),
                                   trailing: Consumer<RequestProvider>(
-                                    builder: (context, request, child) =>
-                                        ElevatedButton.icon(
-                                      onPressed: () async {
-                                        Student cStud = Provider.of<Auth>(
-                                                context,
-                                                listen: false)
-                                            .currentStudent;
-                                        Request _request = Request(
-                                          address: cStud.address,
-                                          requestSender: cStud.id ?? '',
-                                          requestReciver: teacher.id ?? '',
-                                          teacherName:
-                                              '${teacher.firstName} ${teacher.lastName}',
-                                          subject: teacher.subject,
-                                          teacherImg: teacher.imgUrl ?? '',
-                                          studentImg: cStud.imgUrl ?? '',
-                                          studentName:
-                                              '${cStud.firstName} ${cStud.lastName}',
-                                          grade: cStud.grade,
-                                          status: 'pending',
-                                        );
-                                        setState(() {
-                                          teacher.requested = true;
-                                        });
-                                        // print(t);
-                                        await request.createRequest(
-                                            _request, context);
-                                      },
-                                      icon: teacher.requested
-                                          ? const Icon(Icons.timelapse)
-                                          : Icon(Icons.send),
-                                      label: isReq == null
-                                          ? Text(isReq?.status ?? '')
-                                          : const Text('Request'),
-                                    ),
-                                  ),
+                                      builder: (context, request, child) =>
+                                          isReq != null &&
+                                                  isReq.status == "accepted"
+                                              ? IconButton(
+                                                  icon: Icon(
+                                                    Icons.call,
+                                                    color: Colors
+                                                        .black, // Set the icon color to green
+                                                    size:
+                                                        24, // Set the icon size if needed
+                                                  ),
+                                                  onPressed: () => {
+                                                    callNumber(teacher.phone)
+                                                  },
+                                                )
+                                              : ElevatedButton.icon(
+                                                  onPressed: () async {
+                                                    Student cStud =
+                                                        Provider.of<Auth>(
+                                                                context,
+                                                                listen: false)
+                                                            .currentStudent;
+                                                    Request _request = Request(
+                                                      address: cStud.address,
+                                                      requestSender:
+                                                          cStud.id ?? '',
+                                                      requestReciver:
+                                                          teacher.id ?? '',
+                                                      teacherName:
+                                                          '${teacher.firstName} ${teacher.lastName}',
+                                                      subject: teacher.subject,
+                                                      teacherImg:
+                                                          teacher.imgUrl ?? '',
+                                                      studentImg:
+                                                          cStud.imgUrl ?? '',
+                                                      studentName:
+                                                          '${cStud.firstName} ${cStud.lastName}',
+                                                      grade: cStud.grade,
+                                                      created_at:
+                                                          DateTime.now(),
+                                                      status: 'pending',
+                                                    );
+                                                    setState(() {
+                                                      teacher.requested = true;
+                                                    });
+                                                    // print(t);
+                                                    await request.createRequest(
+                                                        _request, context);
+                                                  },
+                                                  icon: teacher.requested
+                                                      ? const Icon(
+                                                          Icons.timelapse)
+                                                      : Icon(Icons.send),
+                                                  label: isReq == null
+                                                      ? Text(
+                                                          isReq?.status ?? '')
+                                                      : const Text('Request'),
+                                                )),
                                 ),
                               ),
                             );
@@ -212,6 +235,10 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
         ],
       ),
     );
+  }
+
+  callNumber(phoneNumber) async {
+    bool? res = await FlutterPhoneDirectCaller.callNumber(phoneNumber);
   }
 }
 

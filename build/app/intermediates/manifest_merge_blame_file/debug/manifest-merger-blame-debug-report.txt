@@ -31,121 +31,132 @@
 22-->[:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
 22-->[:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
 23        </intent>
-24    </queries> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-25    <!-- <uses-sdk android:minSdkVersion="14"/> -->
-26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-26-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:25:5-79
-26-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:25:22-76
+24    </queries>
+25
+26    <uses-permission android:name="android.permission.CALL_PHONE" />
+26-->[:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-69
+26-->[:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-66
 27
-28    <application
-29        android:name="android.app.Application"
-30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-31        android:debuggable="true"
-32        android:icon="@mipmap/launcher_icon"
-33        android:label="home_tutor" >
-34        <activity
-35            android:name="com.example.home_tutor.MainActivity"
-36            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-37            android:exported="true"
-38            android:hardwareAccelerated="true"
-39            android:launchMode="singleTop"
-40            android:theme="@style/LaunchTheme"
-41            android:windowSoftInputMode="adjustResize" >
-42
-43            <!--
-44                 Specifies an Android theme to apply to this Activity as soon as
-45                 the Android process has started. This theme is visible to the user
-46                 while the Flutter UI initializes. After that, this theme continues
-47                 to determine the Window background behind the Flutter UI.
-48            -->
-49            <meta-data
-50                android:name="io.flutter.embedding.android.NormalTheme"
-51                android:resource="@style/NormalTheme" />
-52
-53            <intent-filter>
-54                <action android:name="android.intent.action.MAIN" />
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-57            </intent-filter>
-58        </activity>
-59        <!--
-60             Don't delete the meta-data below.
-61             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-62        -->
-63        <meta-data
-64            android:name="flutterEmbedding"
-65            android:value="2" />
-66
-67        <service
-67-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
-68            android:name="com.google.firebase.components.ComponentDiscoveryService"
-68-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
-69            android:directBootAware="true"
-69-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:34:13-43
-70            android:exported="false" >
-70-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:31:13-37
-71            <meta-data
-71-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
-72                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-72-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-126
-73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
-74            <meta-data
-74-->[:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
-75                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-75-->[:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
-76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+28    <uses-feature
+28-->[:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-13:36
+29        android:name="android.hardware.telephony"
+29-->[:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-50
+30        android:required="false" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+30-->[:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-33
+31    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+32    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+32-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:25:5-79
+32-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:25:22-76
+33
+34    <application
+35        android:name="android.app.Application"
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.6.0] /home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+37        android:debuggable="true"
+38        android:icon="@mipmap/launcher_icon"
+39        android:label="home_tutor" >
+40        <activity
+41            android:name="com.example.home_tutor.MainActivity"
+42            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+43            android:exported="true"
+44            android:hardwareAccelerated="true"
+45            android:launchMode="singleTop"
+46            android:theme="@style/LaunchTheme"
+47            android:windowSoftInputMode="adjustResize" >
+48
+49            <!--
+50                 Specifies an Android theme to apply to this Activity as soon as
+51                 the Android process has started. This theme is visible to the user
+52                 while the Flutter UI initializes. After that, this theme continues
+53                 to determine the Window background behind the Flutter UI.
+54            -->
+55            <meta-data
+56                android:name="io.flutter.embedding.android.NormalTheme"
+57                android:resource="@style/NormalTheme" />
+58
+59            <intent-filter>
+60                <action android:name="android.intent.action.MAIN" />
+61
+62                <category android:name="android.intent.category.LAUNCHER" />
+63            </intent-filter>
+64        </activity>
+65        <!--
+66             Don't delete the meta-data below.
+67             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+68        -->
+69        <meta-data
+70            android:name="flutterEmbedding"
+71            android:value="2" />
+72
+73        <service
+73-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+74            android:name="com.google.firebase.components.ComponentDiscoveryService"
+74-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+75            android:directBootAware="true"
+75-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:34:13-43
+76            android:exported="false" >
+76-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:31:13-37
 77            <meta-data
-77-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:32:13-34:85
-78                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-78-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:33:17-107
+77-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+78                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+78-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-126
 79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:34:17-82
-80        </service>
-81
-82        <uses-library
-82-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-83            android:name="androidx.window.extensions"
-83-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-84            android:required="false" />
-84-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-85        <uses-library
-85-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-86            android:name="androidx.window.sidecar"
-86-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-87            android:required="false" />
-87-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-88
-89        <provider
-89-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
-90            android:name="com.google.firebase.provider.FirebaseInitProvider"
-90-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
-91            android:authorities="com.example.home_tutor.firebaseinitprovider"
-91-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
-92            android:directBootAware="true"
-92-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
-93            android:exported="false"
-93-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
-94            android:initOrder="100" />
-94-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
-95
-96        <activity
-96-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-97            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-97-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-98            android:exported="false"
-98-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-99            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-99-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-100
-101        <meta-data
-101-->[com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-102            android:name="com.google.android.gms.version"
-102-->[com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
-103            android:value="@integer/google_play_services_version" />
-103-->[com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
-104    </application>
-105
-106</manifest>
+79-->[:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+80            <meta-data
+80-->[:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+81                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+81-->[:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+83            <meta-data
+83-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:32:13-34:85
+84                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+84-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:33:17-107
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:34:17-82
+86        </service>
+87
+88        <uses-library
+88-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+89            android:name="androidx.window.extensions"
+89-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+90            android:required="false" />
+90-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+91        <uses-library
+91-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+92            android:name="androidx.window.sidecar"
+92-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+93            android:required="false" />
+93-->[androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+94
+95        <provider
+95-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+96            android:name="com.google.firebase.provider.FirebaseInitProvider"
+96-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+97            android:authorities="com.example.home_tutor.firebaseinitprovider"
+97-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+98            android:directBootAware="true"
+98-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+99            android:exported="false"
+99-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+100            android:initOrder="100" />
+100-->[com.google.firebase:firebase-common:20.3.2] /home/aderaw/.gradle/caches/transforms-3/63e4d01c6677359be2b622aefdf56d9d/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+101
+102        <activity
+102-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+103            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+103-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+104            android:exported="false"
+104-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+105            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+105-->[com.google.android.gms:play-services-base:18.0.1] /home/aderaw/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+106
+107        <meta-data
+107-->[com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+108            android:name="com.google.android.gms.version"
+108-->[com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+109            android:value="@integer/google_play_services_version" />
+109-->[com.google.android.gms:play-services-basement:18.1.0] /home/aderaw/.gradle/caches/transforms-3/83770efba2c122ac4d7bf3f6e3fc9396/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+110    </application>
+111
+112</manifest>

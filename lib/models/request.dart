@@ -10,6 +10,7 @@ class Request {
   String address;
   int grade;
   String status;
+  DateTime created_at;
   bool isAccepted;
   Request(
       {this.id,
@@ -23,6 +24,7 @@ class Request {
       required this.address,
       required this.grade,
       required this.status,
+      required this.created_at,
       this.isAccepted = false});
 
   factory Request.fromJson(Map<String, dynamic> json) {
@@ -38,6 +40,8 @@ class Request {
         address: json['address'] ?? '',
         grade: json['grade'] ?? '',
         status: json['status'] ?? '',
+        created_at: DateTime.parse(
+            json['created_at'] ?? DateTime.now().toIso8601String()),
         isAccepted: json['isAccepted'] ?? false);
   }
 
@@ -54,6 +58,7 @@ class Request {
       'address': address,
       'grade': grade,
       'status': status,
+      'created_at': created_at.toIso8601String(),
       'isAccepted': isAccepted
     };
   }

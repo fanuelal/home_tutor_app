@@ -40,6 +40,7 @@ MERGED from [:firebase_storage] /home/aderaw/My_Folder/MobileApps/homeTutor/home
 MERGED from [:firebase_core] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:flutter_plugin_android_lifecycle] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/21b26ef90e71324700151bde7e8603b7/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.firebase:firebase-storage:20.2.0] /home/aderaw/.gradle/caches/transforms-3/6568fe5062f87f93b40832802a773d73/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:15:1-38:12
@@ -96,6 +97,8 @@ MERGED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tuto
 MERGED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/21b26ef90e71324700151bde7e8603b7/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/21b26ef90e71324700151bde7e8603b7/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
@@ -204,6 +207,16 @@ data
 ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
 	android:mimeType
 		ADDED from [:file_picker] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
+uses-permission#android.permission.CALL_PHONE
+ADDED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-69
+	android:name
+		ADDED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-66
+uses-feature#android.hardware.telephony
+ADDED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from [:flutter_phone_direct_caller] /home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/flutter_phone_direct_caller/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-50
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] /home/aderaw/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
 	android:required
