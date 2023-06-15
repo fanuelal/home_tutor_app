@@ -22,15 +22,15 @@ class StudentProvider extends ChangeNotifier {
     }
   }
 
-  static Future<Student> getStudent(String teacherId) async {
+  static Future<Student> getStudent(String studentId) async {
     final response = await http.get(
-      Uri.parse('$baseURL/.json'),
+      Uri.parse('$baseURL/$studentId.json'),
       headers: {'Content-Type': 'application/json'},
     );
     final responseData = json.decode(response.body);
-    Student teacher = Student.fromJson(responseData);
-    if (response.statusCode != 200) {
-      return teacher;
+    Student student = Student.fromJson(responseData);
+    if (response.statusCode == 200) {
+      return student;
     } else {
       throw Exception('Failed to retrieve teacher');
     }

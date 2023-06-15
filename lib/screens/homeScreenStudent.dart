@@ -40,13 +40,19 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
     print(userId);
     _allMyRequest = await Provider.of<RequestProvider>(context, listen: false)
         .getAllStudentRequests(userId);
-    // print()
-    print("_allMyRequest = ");
-    print(_allMyRequest);
+    Student cStud = Provider.of<Auth>(context, listen: false).currentStudent;
+    filterByAddress(cStud);
     setState(() {
       _isLoading = false;
     });
     _filteredTeachers = _allTeachers;
+  }
+
+  void filterByAddress(Student stud) {
+    _allTeachers = _allTeachers
+        .where((teacher) =>
+            teacher.address.toLowerCase().contains(stud.address.toLowerCase()))
+        .toList();
   }
 
   Request? isRequested(Teacher teacher) {
@@ -165,7 +171,8 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                   ),
                                   title: Text(
                                       '${teacher.firstName} ${teacher.lastName}'),
-                                  subtitle: Text(teacher.subject),
+                                  subtitle: Text(
+                                      "${teacher.subject} - ${teacher.address}"),
                                   trailing: Consumer<RequestProvider>(
                                     builder: (context, request, child) =>
                                         ElevatedButton.icon(

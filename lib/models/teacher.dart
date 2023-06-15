@@ -3,7 +3,7 @@ class Teacher {
   String firstName;
   String lastName;
   int experience;
-  String? availableTime;
+  String availableTime;
   String? imgUrl;
   double rate;
   String? description;
@@ -21,7 +21,7 @@ class Teacher {
       required this.firstName,
       required this.lastName,
       required this.experience,
-      this.availableTime,
+      this.availableTime = '',
       this.imgUrl,
       this.rate = 0.0,
       this.description,
@@ -41,7 +41,7 @@ class Teacher {
         firstName: json['firstName'],
         lastName: json['lastName'],
         experience: json['experience'],
-        availableTime: json['availableTime'],
+        availableTime: json['availableTime'] ?? '',
         imgUrl: json['imgUrl'],
         rate: json['rate'].toDouble(),
         description: json['description'],

@@ -22,7 +22,7 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
   late TextEditingController _addressController;
   late TextEditingController _emailController;
   late TextEditingController _phoneController;
-
+  late TextEditingController _availabilityController;
   @override
   void initState() {
     super.initState();
@@ -36,6 +36,7 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
     _addressController = TextEditingController(text: widget.teacher.address);
     _emailController = TextEditingController(text: widget.teacher.email);
     _phoneController = TextEditingController(text: widget.teacher.phone);
+    _availabilityController = TextEditingController(text: widget.teacher.availableTime.toLowerCase().contains("add your availablity") ? null: widget.teacher.availableTime );
   }
 
   void saveChanges() {
@@ -49,6 +50,7 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
     String address = _addressController.text;
     String email = _emailController.text;
     String phone = _phoneController.text;
+    String availability = _availabilityController.text;
     Teacher teacher = Teacher(
         id: id,
         firstName: firstName,
@@ -59,7 +61,9 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
         phone: phone,
         price: widget.teacher.price,
         subject: widget.teacher.subject,
-        certificate: widget.teacher.certificate);
+        certificate: widget.teacher.certificate,
+        availableTime: availability,
+        );
     teacherProvider
         .updateTeacher(teacher)
         .then((value) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -149,6 +153,19 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
               controller: _emailController,
               decoration: InputDecoration(
                 labelText: 'Email',
+                border: OutlineInputBorder(),
+                filled: true,
+                fillColor: Colors.white,
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue),
+                ),
+              ),
+            ),
+            SizedBox(height: 12),
+            TextField(
+              controller: _availabilityController,
+              decoration: InputDecoration(
+                labelText: 'available at',
                 border: OutlineInputBorder(),
                 filled: true,
                 fillColor: Colors.white,
