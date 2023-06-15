@@ -36,8 +36,12 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
     });
     _allTeachers = await Provider.of<TeacherProvider>(context, listen: false)
         .getTeachers();
+    String userId = Provider.of<Auth>(context, listen: false).userId;
+    print(userId);
     _allMyRequest = await Provider.of<RequestProvider>(context, listen: false)
-        .getAllStudentRequests();
+        .getAllStudentRequests(userId);
+    // print()
+    print("_allMyRequest = ");
     print(_allMyRequest);
     setState(() {
       _isLoading = false;
@@ -187,15 +191,9 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                         setState(() {
                                           teacher.requested = true;
                                         });
-                                        if (isReq == null) {
-                                          await request.createRequest(_request);
-                                        } else {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(SnackBar(
-                                            backgroundColor: Colors.red,
-                                            content: Text('already requested'),
-                                          ));
-                                        }
+                                        // print(t);
+                                        await request.createRequest(
+                                            _request, context);
                                       },
                                       icon: teacher.requested
                                           ? const Icon(Icons.timelapse)
