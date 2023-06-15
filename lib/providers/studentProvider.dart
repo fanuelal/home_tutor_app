@@ -77,6 +77,4 @@ class StudentProvider extends ChangeNotifier {
       throw Exception('Failed to update request status');
     }
   }
-
- 
 }

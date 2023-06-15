@@ -187,8 +187,15 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                         setState(() {
                                           teacher.requested = true;
                                         });
-                                        // print(t);
-                                        await request.createRequest(_request);
+                                        if (isReq == null) {
+                                          await request.createRequest(_request);
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(SnackBar(
+                                            backgroundColor: Colors.red,
+                                            content: Text('already requested'),
+                                          ));
+                                        }
                                       },
                                       icon: teacher.requested
                                           ? const Icon(Icons.timelapse)
