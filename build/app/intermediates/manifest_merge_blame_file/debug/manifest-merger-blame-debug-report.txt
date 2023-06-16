@@ -5,7 +5,7 @@
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="16"
+8        android:minSdkVersion="21"
 9        android:targetSdkVersion="33" />
 10    <!--
 11         The INTERNET permission is required for development. Specifically,
@@ -15,137 +15,247 @@
 15    <uses-permission android:name="android.permission.INTERNET" />
 15-->C:\projects\5th year projects\home_tutor_app\android\app\src\debug\AndroidManifest.xml:7:5-66
 15-->C:\projects\5th year projects\home_tutor_app\android\app\src\debug\AndroidManifest.xml:7:22-64
-16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-16-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-80
-16-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-77
-17
-18    <queries>
-18-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-17:15
-19        <intent>
-19-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-16:18
-20            <action android:name="android.intent.action.GET_CONTENT" />
-20-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-72
-20-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:21-69
-21
-22            <data android:mimeType="*/*" />
-22-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-44
-22-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:19-41
-23        </intent>
-24    </queries> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-25    <!-- <uses-sdk android:minSdkVersion="14"/> -->
-26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-26-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:25:5-79
-26-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:25:22-76
+16
+17    <queries>
+17-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-13:15
+18        <intent>
+18-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:18
+19            <action android:name="android.support.customtabs.action.CustomTabsService" />
+19-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-90
+19-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:11:21-87
+20        </intent>
+21        <intent>
+21-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-16:18
+22            <action android:name="android.intent.action.GET_CONTENT" />
+22-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-72
+22-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:21-69
+23
+24            <data android:mimeType="*/*" />
+24-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-44
+24-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:19-41
+25        </intent>
+26    </queries>
 27
-28    <application
-29        android:name="android.app.Application"
-30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.6.0] C:\Users\25198\.gradle\caches\transforms-3\b11c0e2c212c747cb4bcf29314469768\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-31        android:debuggable="true"
-32        android:icon="@mipmap/launcher_icon"
-33        android:label="home_tutor" >
-34        <activity
-35            android:name="com.example.home_tutor.MainActivity"
-36            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-37            android:exported="true"
-38            android:hardwareAccelerated="true"
-39            android:launchMode="singleTop"
-40            android:theme="@style/LaunchTheme"
-41            android:windowSoftInputMode="adjustResize" >
-42
-43            <!--
-44                 Specifies an Android theme to apply to this Activity as soon as
-45                 the Android process has started. This theme is visible to the user
-46                 while the Flutter UI initializes. After that, this theme continues
-47                 to determine the Window background behind the Flutter UI.
-48            -->
-49            <meta-data
-50                android:name="io.flutter.embedding.android.NormalTheme"
-51                android:resource="@style/NormalTheme" />
-52
-53            <intent-filter>
-54                <action android:name="android.intent.action.MAIN" />
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-57            </intent-filter>
-58        </activity>
-59        <!--
-60             Don't delete the meta-data below.
-61             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-62        -->
-63        <meta-data
-64            android:name="flutterEmbedding"
-65            android:value="2" />
-66
-67        <service
-67-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-68            android:name="com.google.firebase.components.ComponentDiscoveryService"
-68-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
-69            android:directBootAware="true"
-69-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
-70            android:exported="false" >
-70-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:31:13-37
-71            <meta-data
-71-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-72                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-72-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
-73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
-74            <meta-data
-74-->[:firebase_core] C:\projects\5th year projects\home_tutor_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-75                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-75-->[:firebase_core] C:\projects\5th year projects\home_tutor_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
-76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[:firebase_core] C:\projects\5th year projects\home_tutor_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
-77            <meta-data
-77-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:32:13-34:85
-78                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-78-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:33:17-107
-79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:34:17-82
-80        </service>
-81
-82        <uses-library
-82-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-83            android:name="androidx.window.extensions"
-83-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-84            android:required="false" />
-84-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-85        <uses-library
-85-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-86            android:name="androidx.window.sidecar"
-86-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-87            android:required="false" />
-87-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-88
-89        <provider
-89-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
-90            android:name="com.google.firebase.provider.FirebaseInitProvider"
-90-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
-91            android:authorities="com.example.home_tutor.firebaseinitprovider"
-91-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
-92            android:directBootAware="true"
-92-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
+28    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+28-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-80
+28-->[:file_picker] C:\projects\5th year projects\home_tutor_app\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-77
+29    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+29-->[:connectivity_plus] C:\projects\5th year projects\home_tutor_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+29-->[:connectivity_plus] C:\projects\5th year projects\home_tutor_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
+30    <uses-permission android:name="android.permission.CALL_PHONE" />
+30-->[:flutter_phone_direct_caller] C:\projects\5th year projects\home_tutor_app\build\flutter_phone_direct_caller\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-69
+30-->[:flutter_phone_direct_caller] C:\projects\5th year projects\home_tutor_app\build\flutter_phone_direct_caller\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-66
+31
+32    <uses-feature
+32-->[:flutter_phone_direct_caller] C:\projects\5th year projects\home_tutor_app\build\flutter_phone_direct_caller\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-13:36
+33        android:name="android.hardware.telephony"
+33-->[:flutter_phone_direct_caller] C:\projects\5th year projects\home_tutor_app\build\flutter_phone_direct_caller\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-50
+34        android:required="false" />
+34-->[:flutter_phone_direct_caller] C:\projects\5th year projects\home_tutor_app\build\flutter_phone_direct_caller\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-33
+35
+36    <application
+37        android:name="android.app.Application"
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.8.0] C:\Users\25198\.gradle\caches\transforms-3\005627934cb5de51d804cd3c597f8200\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+39        android:debuggable="true"
+40        android:icon="@mipmap/launcher_icon"
+41        android:label="home_tutor" >
+42        <activity
+43            android:name="com.example.home_tutor.MainActivity"
+44            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+45            android:exported="true"
+46            android:hardwareAccelerated="true"
+47            android:launchMode="singleTop"
+48            android:theme="@style/LaunchTheme"
+49            android:windowSoftInputMode="adjustResize" >
+50
+51            <!--
+52                 Specifies an Android theme to apply to this Activity as soon as
+53                 the Android process has started. This theme is visible to the user
+54                 while the Flutter UI initializes. After that, this theme continues
+55                 to determine the Window background behind the Flutter UI.
+56            -->
+57            <meta-data
+58                android:name="io.flutter.embedding.android.NormalTheme"
+59                android:resource="@style/NormalTheme" />
+60
+61            <intent-filter>
+62                <action android:name="android.intent.action.MAIN" />
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+65            </intent-filter>
+66        </activity>
+67        <!--
+68             Don't delete the meta-data below.
+69             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+70        -->
+71        <meta-data
+72            android:name="flutterEmbedding"
+73            android:value="2" />
+74
+75        <service
+75-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+76            android:name="com.google.firebase.components.ComponentDiscoveryService"
+76-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+77            android:directBootAware="true"
+77-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
+78            android:exported="false" >
+78-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:31:13-37
+79            <meta-data
+79-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+80                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+80-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[:firebase_storage] C:\projects\5th year projects\home_tutor_app\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+82            <meta-data
+82-->[:firebase_core] C:\projects\5th year projects\home_tutor_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+83-->[:firebase_core] C:\projects\5th year projects\home_tutor_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+84                android:value="com.google.firebase.components.ComponentRegistrar" />
+84-->[:firebase_core] C:\projects\5th year projects\home_tutor_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+85            <meta-data
+85-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:32:13-34:85
+86                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+86-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:33:17-107
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[com.google.firebase:firebase-storage:20.2.0] C:\Users\25198\.gradle\caches\transforms-3\6568fe5062f87f93b40832802a773d73\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:34:17-82
+88        </service>
+89
+90        <activity
+90-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-20:47
+91            android:name="com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserActivity"
+91-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-104
+92            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+92-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-137
 93            android:exported="false"
-93-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
-94            android:initOrder="100" />
-94-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
-95
-96        <activity
-96-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-97            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-97-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-98            android:exported="false"
-98-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-99            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-99-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-100
-101        <meta-data
-101-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\25198\.gradle\caches\transforms-3\83770efba2c122ac4d7bf3f6e3fc9396\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-102            android:name="com.google.android.gms.version"
-102-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\25198\.gradle\caches\transforms-3\83770efba2c122ac4d7bf3f6e3fc9396\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-103            android:value="@integer/google_play_services_version" />
-103-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\25198\.gradle\caches\transforms-3\83770efba2c122ac4d7bf3f6e3fc9396\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-104    </application>
-105
-106</manifest>
+93-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-37
+94            android:theme="@style/AppTheme" />
+94-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-44
+95        <activity
+95-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-24:55
+96            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivity"
+96-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-112
+97            android:exported="false"
+97-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-37
+98            android:theme="@style/ThemeTransparent" />
+98-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-52
+99        <activity
+99-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-28:55
+100            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.TrustedWebActivity"
+100-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-106
+101            android:exported="false"
+101-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-37
+102            android:theme="@style/ThemeTransparent" />
+102-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-52
+103        <activity
+103-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-33:55
+104            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivitySingleInstance"
+104-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-126
+105            android:exported="false"
+105-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-37
+106            android:launchMode="singleInstance"
+106-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-48
+107            android:theme="@style/ThemeTransparent" />
+107-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:33:13-52
+108        <activity
+108-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-38:55
+109            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.TrustedWebActivitySingleInstance"
+109-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-120
+110            android:exported="false"
+110-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-37
+111            android:launchMode="singleInstance"
+111-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-48
+112            android:theme="@style/ThemeTransparent" />
+112-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-52
+113
+114        <receiver
+114-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:40:9-43:40
+115            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ActionBroadcastReceiver"
+115-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-111
+116            android:enabled="true"
+116-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-35
+117            android:exported="false" />
+117-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-37
+118
+119        <meta-data
+119-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:45:9-47:36
+120            android:name="io.flutter.embedded_views_preview"
+120-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-61
+121            android:value="true" />
+121-->[:flutter_inappwebview] C:\projects\5th year projects\home_tutor_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-33
+122
+123        <activity
+123-->[:url_launcher_android] C:\projects\5th year projects\home_tutor_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+124            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+124-->[:url_launcher_android] C:\projects\5th year projects\home_tutor_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+125            android:exported="false"
+125-->[:url_launcher_android] C:\projects\5th year projects\home_tutor_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+126            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+126-->[:url_launcher_android] C:\projects\5th year projects\home_tutor_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+127
+128        <uses-library
+128-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+129            android:name="androidx.window.extensions"
+129-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+130            android:required="false" />
+130-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+131        <uses-library
+131-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+132            android:name="androidx.window.sidecar"
+132-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+133            android:required="false" />
+133-->[androidx.window:window:1.0.0-beta04] C:\Users\25198\.gradle\caches\transforms-3\e1f53c96aa78f7b42431169b7cd59214\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+134
+135        <activity
+135-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+136            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+136-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+137            android:exported="false"
+137-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+138            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+138-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\25198\.gradle\caches\transforms-3\1a2cb69c9228e95e429c828957f3a3b6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+139
+140        <provider
+140-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
+141            android:name="com.google.firebase.provider.FirebaseInitProvider"
+141-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
+142            android:authorities="com.example.home_tutor.firebaseinitprovider"
+142-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
+143            android:directBootAware="true"
+143-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
+144            android:exported="false"
+144-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
+145            android:initOrder="100" />
+145-->[com.google.firebase:firebase-common:20.3.2] C:\Users\25198\.gradle\caches\transforms-3\63e4d01c6677359be2b622aefdf56d9d\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
+146
+147        <meta-data
+147-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\25198\.gradle\caches\transforms-3\83770efba2c122ac4d7bf3f6e3fc9396\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+148            android:name="com.google.android.gms.version"
+148-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\25198\.gradle\caches\transforms-3\83770efba2c122ac4d7bf3f6e3fc9396\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+149            android:value="@integer/google_play_services_version" />
+149-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\25198\.gradle\caches\transforms-3\83770efba2c122ac4d7bf3f6e3fc9396\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+150
+151        <provider
+151-->[androidx.emoji2:emoji2:1.2.0] C:\Users\25198\.gradle\caches\transforms-3\3f458b27c710c033214b46ad6235ef6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+152            android:name="androidx.startup.InitializationProvider"
+152-->[androidx.emoji2:emoji2:1.2.0] C:\Users\25198\.gradle\caches\transforms-3\3f458b27c710c033214b46ad6235ef6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+153            android:authorities="com.example.home_tutor.androidx-startup"
+153-->[androidx.emoji2:emoji2:1.2.0] C:\Users\25198\.gradle\caches\transforms-3\3f458b27c710c033214b46ad6235ef6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+154            android:exported="false" >
+154-->[androidx.emoji2:emoji2:1.2.0] C:\Users\25198\.gradle\caches\transforms-3\3f458b27c710c033214b46ad6235ef6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+155            <meta-data
+155-->[androidx.emoji2:emoji2:1.2.0] C:\Users\25198\.gradle\caches\transforms-3\3f458b27c710c033214b46ad6235ef6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+156                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+156-->[androidx.emoji2:emoji2:1.2.0] C:\Users\25198\.gradle\caches\transforms-3\3f458b27c710c033214b46ad6235ef6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+157                android:value="androidx.startup" />
+157-->[androidx.emoji2:emoji2:1.2.0] C:\Users\25198\.gradle\caches\transforms-3\3f458b27c710c033214b46ad6235ef6e\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+158            <meta-data
+158-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\25198\.gradle\caches\transforms-3\ebf7841237e70a1980af156fef097570\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+159                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+159-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\25198\.gradle\caches\transforms-3\ebf7841237e70a1980af156fef097570\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+160                android:value="androidx.startup" />
+160-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\25198\.gradle\caches\transforms-3\ebf7841237e70a1980af156fef097570\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+161        </provider>
+162    </application>
+163
+164</manifest>

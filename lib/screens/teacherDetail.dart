@@ -4,8 +4,8 @@ import '../models/teacher.dart';
 
 class TeacherDetail extends StatelessWidget {
   final Teacher teacher;
-
-  TeacherDetail({required this.teacher});
+  String? status = "accepted";
+  TeacherDetail({required this.teacher, this.status});
   @override
   Widget build(BuildContext context) {
     // Teacher teacher =
@@ -69,10 +69,12 @@ class TeacherDetail extends StatelessWidget {
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 8),
-                Text(
-                  'Phone: ${teacher.phone}',
-                  style: TextStyle(fontSize: 16),
-                ),
+                status == "accepted"
+                    ? Text(
+                        'Phone: ${teacher.phone}',
+                        style: TextStyle(fontSize: 16),
+                      )
+                    : Text(""),
               ],
             ),
           ),

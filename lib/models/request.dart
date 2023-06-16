@@ -40,7 +40,8 @@ class Request {
         address: json['address'] ?? '',
         grade: json['grade'] ?? '',
         status: json['status'] ?? '',
-        created_at: DateTime.parse(json['created_at'] ?? DateTime.now().toIso8601String()),
+        created_at: DateTime.parse(
+            json['created_at'] ?? DateTime.now().toIso8601String()),
         isAccepted: json['isAccepted'] ?? false);
   }
 

@@ -23,7 +23,7 @@ class Payment extends ChangeNotifier {
       "first_name": "Our",
       "last_name": "Client",
       "phone_number": "0912345678",
-      "tx_ref": "betemebl-${uuid.v1()}",
+      "tx_ref": "hometutor-${uuid.v1()}",
       "callback_url":
           "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
       "customization[title]": "Payment for my home tutor teacher",

@@ -7,7 +7,6 @@ import "../providers/dio_provider.dart";
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
-
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -22,7 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Container(
             width: double.infinity,
             color: Config.primaryColor,
-            child:  Column(
+            child: Column(
               children: const [
                 SizedBox(
                   height: 110,
