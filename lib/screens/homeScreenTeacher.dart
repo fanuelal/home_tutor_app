@@ -6,6 +6,7 @@ import '../main.dart';
 import '../models/request.dart';
 import '../providers/request.dart';
 import '../utils/config.dart';
+import 'studentDetail.dart';
 
 class HomeScreenTeacher extends StatefulWidget {
   @override
@@ -129,7 +130,12 @@ class _HomeScreenStudentState extends State<HomeScreenTeacher> {
                             final teacher = _filteredRequests[index];
                             return InkWell(
                               onTap: (){
-                                
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        StudentDetail(studentId: teacher.requestSender),
+                                  ),
+                                );
                               },
                               child: ListTile(
                                 leading: CircleAvatar(

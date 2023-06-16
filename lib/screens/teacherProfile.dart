@@ -33,7 +33,8 @@ class TeacherProfile extends StatelessWidget {
                       CircleAvatar(
                         radius: 80,
                         backgroundImage:
-                            NetworkImage(currentStudent.imgUrl ?? ''),
+                            NetworkImage(currentStudent.imgUrl ??
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgJJnmBFvOHnaHjSIsstNDF160eI2E5HMoA&usqp=CAU'),
                       ),
                       SizedBox(height: 16),
                       Text(
@@ -61,6 +62,11 @@ class TeacherProfile extends StatelessWidget {
                       SizedBox(height: 8),
                       Text(
                         'Email: ${currentStudent.email}',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        'Availability: ${currentStudent.availableTime == '' ? 'add your availablity' : currentStudent.availableTime}',
                         style: TextStyle(fontSize: 16),
                       ),
                       SizedBox(height: 8),
