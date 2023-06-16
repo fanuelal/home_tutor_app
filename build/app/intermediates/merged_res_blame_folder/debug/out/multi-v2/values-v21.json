@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aderaw/My_Folder/MobileApps/homeTutor/home_tutor_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "C:\\projects\\5th year projects\\home_tutor_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "/home/aderaw/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/res/values-v21/values-v21.xml",
+                    "source": "C:\\Users\\25198\\.gradle\\caches\\transforms-3\\b11c0e2c212c747cb4bcf29314469768\\transformed\\core-1.6.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
