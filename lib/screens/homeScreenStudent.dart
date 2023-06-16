@@ -155,8 +155,10 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                               onTap: () {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        TeacherDetail(teacher: teacher),
+                                    builder: (context) => TeacherDetail(
+                                      teacher: teacher,
+                                      status: isReq == null ? "" : isReq.status,
+                                    ),
                                   ),
                                 );
                               },
