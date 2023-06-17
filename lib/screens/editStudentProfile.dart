@@ -216,34 +216,7 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
                   ? Text(filename!)
                   : Text("No certificate selected"),
               Config.spaceSmall,
-              Consumer<Auth>(
-                builder: (context, auth, child) {
-                  return Button(
-                    width: double.infinity,
-                    title: 'Sign Up',
-                    onPressed: () async {
-                      await uploadCertificate(selectedFile);
-                      Student teacher = Student(
-                          firstName: _firstNameController.text,
-                          lastName: _lastNameController.text,
-                          grade: int.parse(_gradeController.text),
-                          address: _addressController.text,
-                          email: _emailController.text,
-                          phone: _phoneController.text,
-                          imgUrl: profileUrl);
-                      setState(() {
-                        isLogging = true;
-                      });
-                      setState(() {
-                        isLogging = false;
-                      });
-                      if (auth.token != '') {
-                        MyApp.navigatorKey.currentState!
-                            .pushNamed('studentProfile');
-                      }
-                    },
-                    disable: false,
-                  );}),
+              
             ElevatedButton(
               onPressed: saveChanges,
               child: Text(

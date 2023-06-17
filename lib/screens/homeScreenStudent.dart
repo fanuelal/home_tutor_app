@@ -223,12 +223,14 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                                                     listen:
                                                                         false)
                                                                 .currentStudent;
-                                                        teacher.isPaid = true;
                                                         Provider.of<TeacherProvider>(
                                                                 context,
                                                                 listen: false)
                                                             .updateTeacher(
                                                                 teacher);
+                                                                setState(() {
+                                                        teacher.isPaid = true;
+                                                                });
 
                                                         Provider.of<Payment>(
                                                                 context,
