@@ -9,6 +9,7 @@ import './screens/success_booked.dart';
 import './utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'providers/payment.dart';
 import 'providers/request.dart';
 import 'providers/studentProvider.dart';
 import 'providers/teacherProvider.dart';
@@ -54,6 +55,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<TeacherProvider>(
           create: (context) => TeacherProvider(),
         ),
+        ChangeNotifierProvider<Payment>(
+          create: (context) => Payment(),
+        )
       ],
       child: MaterialApp(
         navigatorKey: navigatorKey,

@@ -18,6 +18,8 @@ class Auth extends ChangeNotifier {
     return token != '';
   }
 
+  late Student currentStudent;
+  late Teacher currentTeacher;
   String get userId {
     return _userId;
   }
@@ -36,7 +38,7 @@ class Auth extends ChangeNotifier {
 
   Future<void> teacherSignUp(Teacher teacher, String password, String userType,
       BuildContext context) async {
-    await _authenticate(teacher.email, password, 'signUp', userType, context);
+    await authenticate(teacher.email, password, 'signUp', userType, context);
     String baseURL =
         'https://estudy-376aa-default-rtdb.firebaseio.com/teachers';
     final userDataUrl = Uri.parse("$baseURL/$_userId.json");
@@ -47,7 +49,7 @@ class Auth extends ChangeNotifier {
 
   Future<void> studentSignUp(Student student, String password, String userType,
       BuildContext context) async {
-    await _authenticate(student.email, password, 'signUp', userType, context);
+    await authenticate(student.email, password, 'signUp', userType, context);
     String baseURL =
         'https://estudy-376aa-default-rtdb.firebaseio.com/students';
     print(_userId);
@@ -58,9 +60,6 @@ class Auth extends ChangeNotifier {
     currentStudent = student;
   }
 
-  late Student currentStudent;
-  late Teacher currentTeacher;
-
   Future<void> getCurrentUser(String userId, String userType) async {
     if (userType == 'Student') {
       String studentBaseUrl =
@@ -68,8 +67,10 @@ class Auth extends ChangeNotifier {
       final response = await http.get(Uri.parse(studentBaseUrl));
       final responseData = json.decode(response.body);
       if (json.decode(response.body) == null) return;
+
       currentStudent = Student.fromJson(responseData);
       currentStudent.id = userId;
+      print("isLogged IN: ${currentStudent.firstName}");
     } else {
       String teacherBaseUrl =
           'https://estudy-376aa-default-rtdb.firebaseio.com/teachers/$userId.json';
@@ -81,7 +82,7 @@ class Auth extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> _authenticate(String email, String password, String segmentStr,
+  Future<void> authenticate(String email, String password, String segmentStr,
       String userType, BuildContext context) async {
     print('$email, $password, $userType');
     final url = Uri.parse(
@@ -110,13 +111,11 @@ class Auth extends ChangeNotifier {
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
         return;
       }
-      // print("where is error");
       print(responseData['localId']);
-      // userEmail = email;
       _token = responseData['idToken'];
       _userId = responseData['localId'];
-      if (segmentStr == 'signInWithPassword') {
-        getCurrentUser(_userId, userType);
+      if (segmentStr == 'signInWithPassword' || _token != '') {
+        await getCurrentUser(_userId, userType);
       }
       String baseURL = '';
 
@@ -137,17 +136,15 @@ class Auth extends ChangeNotifier {
     }
   }
 
-  
-
   Future<void> signIn(String email, String password, String userType,
       BuildContext context) async {
-    return _authenticate(
+    return await authenticate(
         email, password, 'signInWithPassword', userType, context);
   }
 
   Future<void> signUp(
       String email, String password, String userType, BuildContext ctx) async {
-    return _authenticate(email, password, 'signUp', userType, ctx);
+    return authenticate(email, password, 'signUp', userType, ctx);
   }
 
   Future<void> Logout() async {

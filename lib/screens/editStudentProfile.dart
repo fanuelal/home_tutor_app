@@ -1,8 +1,16 @@
+// import 'dart:html';
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:home_tutor_app/providers/studentProvider.dart';
 import 'package:provider/provider.dart';
 
+import '../components/button.dart';
+import '../main.dart';
 import '../models/student.dart';
+import '../providers/auth.dart';
+import '../utils/config.dart';
 
 class EditStudentProfilePage extends StatefulWidget {
   final Student student;
@@ -20,7 +28,10 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
   late TextEditingController _addressController;
   late TextEditingController _emailController;
   late TextEditingController _phoneController;
-
+    bool isLogging = false;
+  String profileUrl = "";
+  String? filename;
+  File? selectedFile;
   @override
   void initState() {
     super.initState();
@@ -35,6 +46,20 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
     _phoneController = TextEditingController(text: widget.student.phone);
   }
 
+  Future<String> uploadCertificate(file) async {
+    final storage = FirebaseStorage.instance;
+    final ref = storage.ref().child('profileImages/${DateTime.now()}/$filename');
+    final uploadTask = ref.putFile(file);
+    final snapshot = await uploadTask;
+    final downloadUrl = await snapshot.ref.getDownloadURL();
+    this.profileUrl = downloadUrl;
+    print(downloadUrl);
+    print("downloaded url id ${downloadUrl}");
+    profileUrl = downloadUrl;
+    return downloadUrl;
+  }
+
+
   void saveChanges() {
     final studentProvider =
         Provider.of<StudentProvider>(context, listen: false);
@@ -46,6 +71,7 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
     String address = _addressController.text;
     String email = _emailController.text;
     String phone = _phoneController.text;
+    String imageUrl = profileUrl;
     Student student = Student(
         id: id,
         firstName: firstName,
@@ -53,7 +79,8 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
         grade: grade,
         address: address,
         email: email,
-        phone: phone);
+        phone: phone,
+        imgUrl: imageUrl);
     studentProvider
         .updateStudent(student)
         .then((value) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -152,6 +179,71 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
               ),
             ),
             SizedBox(height: 16),
+            SizedBox(
+                width: double.infinity,
+                child: TextButton.icon(
+                  onPressed: () async {
+                    FilePickerResult? result =
+                        await FilePicker.platform.pickFiles();
+                    PlatformFile file = result!.files.first;
+                    var file_size_bytes = file.size;
+                    var file_size_mb = file_size_bytes / 1000000;
+                    setState(() {
+                      this.selectedFile = File(file.path!);
+                      // this.size = file_size_mb;
+                      this.filename = file.name;
+                    });
+                  },
+                  icon: Icon(Icons.attach_file),
+                  label: Text('Upload Profile Image'),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.grey),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                      EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+                    ),
+                  ),
+                ),
+              ),
+              filename != null
+                  ? Text(filename!)
+                  : Text("No certificate selected"),
+              Config.spaceSmall,
+              Consumer<Auth>(
+                builder: (context, auth, child) {
+                  return Button(
+                    width: double.infinity,
+                    title: 'Sign Up',
+                    onPressed: () async {
+                      await uploadCertificate(selectedFile);
+                      Student teacher = Student(
+                          firstName: _firstNameController.text,
+                          lastName: _lastNameController.text,
+                          grade: int.parse(_gradeController.text),
+                          address: _addressController.text,
+                          email: _emailController.text,
+                          phone: _phoneController.text,
+                          imgUrl: profileUrl);
+                      setState(() {
+                        isLogging = true;
+                      });
+                      setState(() {
+                        isLogging = false;
+                      });
+                      if (auth.token != '') {
+                        MyApp.navigatorKey.currentState!
+                            .pushNamed('studentProfile');
+                      }
+                    },
+                    disable: false,
+                  );}),
             ElevatedButton(
               onPressed: saveChanges,
               child: Text(

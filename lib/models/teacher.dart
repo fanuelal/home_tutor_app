@@ -16,6 +16,7 @@ class Teacher {
   String? password;
   bool requested;
   String certificate;
+  bool isPaid;
   Teacher(
       {this.id,
       required this.firstName,
@@ -33,7 +34,8 @@ class Teacher {
       this.password,
       required this.email,
       this.requested = false,
-      required this.certificate});
+      required this.certificate,
+      this.isPaid = false});
 
   factory Teacher.fromJson(Map<String, dynamic> json) {
     return Teacher(
@@ -51,7 +53,9 @@ class Teacher {
         status: json['status'],
         phone: json['phone'],
         email: json['email'],
-        certificate: json['certificate']);
+        certificate: json['certificate'],
+        isPaid: json['isPaid'] ?? false,
+        );
   }
 
   Map<String, dynamic> toJson() {
@@ -70,7 +74,8 @@ class Teacher {
       'status': status,
       'phone': phone,
       'email': email,
-      'certificate': certificate
+      'certificate': certificate,
+      'isPaid': isPaid
     };
   }
 }

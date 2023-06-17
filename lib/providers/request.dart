@@ -90,7 +90,7 @@ class RequestProvider extends ChangeNotifier {
   List<Request> getCurrentStudentRequests(List<Request> reqs, String userId) {
     // final auth = Provider.of(context).;
     print("getCurrentStudentRequests.....  email: ${userId}");
-    if (userId != null || userId != '') {
+    if (userId != null || userId != '' ) {
       List<Request> currentUserReq = reqs.where((req) {
         print(req.studentName);
         return req.requestSender == userId;

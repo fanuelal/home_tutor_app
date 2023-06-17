@@ -7,6 +7,7 @@ import '../main.dart';
 import '../models/request.dart';
 import '../models/student.dart';
 import '../models/teacher.dart';
+import '../providers/payment.dart';
 import '../providers/request.dart';
 import '../providers/studentProvider.dart';
 import '../providers/teacherProvider.dart';
@@ -23,12 +24,20 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
   List<Teacher> _filteredTeachers = [];
   List<Teacher> _allTeachers = [];
   List<Request> _allMyRequest = [];
+
   bool _isLoading = false;
   @override
   void initState() {
     super.initState();
     fetch();
     _searchController.addListener(_filterTeachers);
+  }
+
+  void check() {
+    if (Provider.of<Auth>(context, listen: false).token == '') {
+      // Provider.of<Auth>(context, listen: false).authenticate();
+      Navigator.of(context).pushNamed('/');
+    }
   }
 
   void fetch() async {
@@ -41,6 +50,10 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
     print(userId);
     _allMyRequest = await Provider.of<RequestProvider>(context, listen: false)
         .getAllStudentRequests(userId);
+
+    // final auth = Provider.of<Auth>(context, listen: false);
+    // await Provider.of<Auth>(context, listen: false)
+    //     .getCurrentUser(auth.userId, 'Student');
     Student cStud = Provider.of<Auth>(context, listen: false).currentStudent;
     filterByAddress(cStud);
     setState(() {
@@ -180,18 +193,52 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                       builder: (context, request, child) =>
                                           isReq != null &&
                                                   isReq.status == "accepted"
-                                              ? IconButton(
-                                                  icon: Icon(
-                                                    Icons.call,
-                                                    color: Colors
-                                                        .black, // Set the icon color to green
-                                                    size:
-                                                        24, // Set the icon size if needed
-                                                  ),
-                                                  onPressed: () => {
-                                                    callNumber(teacher.phone)
-                                                  },
-                                                )
+                                              ? (teacher.isPaid
+                                                  ? IconButton(
+                                                      icon: Icon(
+                                                        Icons.call,
+                                                        color: Colors
+                                                            .black, // Set the icon color to green
+                                                        size:
+                                                            24, // Set the icon size if needed
+                                                      ),
+                                                      onPressed: () => {
+                                                        callNumber(
+                                                            teacher.phone)
+                                                      },
+                                                    )
+                                                  : ElevatedButton.icon(
+                                                      label: Text('pay'),
+                                                      icon: Icon(
+                                                        Icons.monetization_on,
+                                                        color: Colors
+                                                            .white, // Set the icon color to green
+                                                        size:
+                                                            24, // Set the icon size if needed
+                                                      ),
+                                                      onPressed: () {
+                                                        Student cStud =
+                                                            Provider.of<Auth>(
+                                                                    context,
+                                                                    listen:
+                                                                        false)
+                                                                .currentStudent;
+                                                        teacher.isPaid = true;
+                                                        Provider.of<TeacherProvider>(
+                                                                context,
+                                                                listen: false)
+                                                            .updateTeacher(
+                                                                teacher);
+
+                                                        Provider.of<Payment>(
+                                                                context,
+                                                                listen: false)
+                                                            .paymentFunc(
+                                                                context,
+                                                                cStud,
+                                                                100);
+                                                      },
+                                                    ))
                                               : ElevatedButton.icon(
                                                   onPressed: () async {
                                                     Student cStud =

@@ -49,6 +49,7 @@ class StudentProvider extends ChangeNotifier {
   }
 
   Future<void> updateStudent(Student student) async {
+    
     final response = await http.put(
       Uri.parse('$baseURL/${student.id}.json'),
       headers: {'Content-Type': 'application/json'},

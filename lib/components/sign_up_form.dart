@@ -1,7 +1,7 @@
-import 'package:home_tutor_app/components/button.dart';
-import 'package:home_tutor_app/main.dart';
-import 'package:home_tutor_app/models/auth_model.dart';
-import 'package:home_tutor_app/providers/dio_provider.dart';
+import '../components/button.dart';
+import '../main.dart';
+import '../models/auth_model.dart';
+import '../providers/dio_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';

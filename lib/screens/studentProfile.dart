@@ -35,9 +35,7 @@ class StudentProfile extends StatelessWidget {
                       radius: 80,
                       backgroundImage:
                           NetworkImage(currentStudent.imgUrl ?? ''),
-                      child: currentStudent.imgUrl == null
-                          ? Icon(Icons.person)
-                          : null,
+                      
                     ),
                     SizedBox(height: 16),
                     Text(
