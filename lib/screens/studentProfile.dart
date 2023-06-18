@@ -34,7 +34,7 @@ class StudentProfile extends StatelessWidget {
                     CircleAvatar(
                       radius: 80,
                       backgroundImage:
-                          NetworkImage(currentStudent.imgUrl ?? ''),
+                          currentStudent.imgUrl != null || currentStudent.imgUrl != "" ?  NetworkImage(currentStudent.imgUrl!) :  NetworkImage('https://logowik.com/content/uploads/images/810_student.jpg'),
                       
                     ),
                     SizedBox(height: 16),

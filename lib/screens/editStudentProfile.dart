@@ -28,7 +28,7 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
   late TextEditingController _addressController;
   late TextEditingController _emailController;
   late TextEditingController _phoneController;
-    bool isLogging = false;
+  bool isLogging = false;
   String profileUrl = "";
   String? filename;
   File? selectedFile;
@@ -46,21 +46,21 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
     _phoneController = TextEditingController(text: widget.student.phone);
   }
 
+  bool isUploading = false;
   Future<String> uploadCertificate(file) async {
     final storage = FirebaseStorage.instance;
-    final ref = storage.ref().child('profileImages/${DateTime.now()}/$filename');
+    final ref =
+        storage.ref().child('profileImages/${DateTime.now()}/$filename');
     final uploadTask = ref.putFile(file);
     final snapshot = await uploadTask;
     final downloadUrl = await snapshot.ref.getDownloadURL();
     this.profileUrl = downloadUrl;
-    print(downloadUrl);
-    print("downloaded url id ${downloadUrl}");
     profileUrl = downloadUrl;
+    print("profile URL:  ${profileUrl}");
     return downloadUrl;
   }
 
-
-  void saveChanges() {
+  void saveChanges() async {
     final studentProvider =
         Provider.of<StudentProvider>(context, listen: false);
     String? id = widget.student.id;
@@ -180,44 +180,52 @@ class _EditStudentProfilePageState extends State<EditStudentProfilePage> {
             ),
             SizedBox(height: 16),
             SizedBox(
-                width: double.infinity,
-                child: TextButton.icon(
-                  onPressed: () async {
-                    FilePickerResult? result =
-                        await FilePicker.platform.pickFiles();
-                    PlatformFile file = result!.files.first;
-                    var file_size_bytes = file.size;
-                    var file_size_mb = file_size_bytes / 1000000;
-                    setState(() {
-                      this.selectedFile = File(file.path!);
-                      // this.size = file_size_mb;
-                      this.filename = file.name;
-                    });
-                  },
-                  icon: Icon(Icons.attach_file),
-                  label: Text('Upload Profile Image'),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
+              width: double.infinity,
+              child: TextButton.icon(
+                onPressed: () async {
+                  FilePickerResult? result =
+                      await FilePicker.platform.pickFiles();
+                  PlatformFile file = result!.files.first;
+                  var file_size_bytes = file.size;
+                  var file_size_mb = file_size_bytes / 1000000;
+                  setState(() {
+                    this.selectedFile = File(file.path!);
+                    // this.size = file_size_mb;
+                    this.filename = file.name;
+                  });
+                  setState(() {
+                  isUploading = true;
+                  });
+                  String profileImageUrl =
+                      await uploadCertificate(this.selectedFile);
+                   setState(() {
+                  isUploading = false;
+                  widget.student.imgUrl = profileImageUrl;
+                  });
+                },
+                icon: Icon(Icons.attach_file),
+                label: Text('Upload Profile Image'),
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.grey),
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                      EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-                    ),
+                  ),
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
                   ),
                 ),
               ),
-              filename != null
-                  ? Text(filename!)
-                  : Text("No certificate selected"),
-              Config.spaceSmall,
-              
-            ElevatedButton(
+            ),
+            filename != null
+                ? Text(filename!)
+                : Text("No certificate selected"),
+            Config.spaceSmall,
+            isUploading ? CircularProgressIndicator(): ElevatedButton(
               onPressed: saveChanges,
               child: Text(
                 'Save',

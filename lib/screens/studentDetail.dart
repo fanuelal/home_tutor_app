@@ -41,7 +41,7 @@ class _StudentDetailState extends State<StudentDetail> {
                         CircleAvatar(
                           radius: 80,
                           backgroundImage: NetworkImage(
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTnPpw27TlK0FlQkZItv1YnkwYhfcnKPc0kA&usqp=CAU'),
+                              'https://static.vecteezy.com/system/resources/previews/008/845/857/original/illustration-student-get-an-idea-png.png'),
                         ),
                         SizedBox(height: 16),
                         SizedBox(height: 16),

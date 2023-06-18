@@ -104,6 +104,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
 
   @override
   Widget build(BuildContext context) {
+    Student cStud = Provider.of<Auth>(context, listen: false).currentStudent;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -117,7 +118,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
               child: CircleAvatar(
                 radius: 15,
                 backgroundImage: NetworkImage(
-                    'https://logowik.com/content/uploads/images/810_student.jpg'),
+                   cStud.imgUrl ?? 'https://logowik.com/content/uploads/images/810_student.jpg'),
               ),
             )),
         title: const Text('Choose Teacher'),

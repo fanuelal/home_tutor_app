@@ -1,8 +1,9 @@
+import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:home_tutor_app/providers/studentProvider.dart';
 import 'package:home_tutor_app/providers/teacherProvider.dart';
 import 'package:provider/provider.dart';
-
+import 'dart:io';
 import '../models/teacher.dart';
 
 class EditTeacherProfilePage extends StatefulWidget {
@@ -23,6 +24,11 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
   late TextEditingController _emailController;
   late TextEditingController _phoneController;
   late TextEditingController _availabilityController;
+  bool isLogging = false;
+  String profileUrl = "";
+  String? filename;
+  File? selectedFile;
+  bool isUploading = false;
   @override
   void initState() {
     super.initState();
@@ -36,7 +42,24 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
     _addressController = TextEditingController(text: widget.teacher.address);
     _emailController = TextEditingController(text: widget.teacher.email);
     _phoneController = TextEditingController(text: widget.teacher.phone);
-    _availabilityController = TextEditingController(text: widget.teacher.availableTime.toLowerCase().contains("add your availablity") ? null: widget.teacher.availableTime );
+    _availabilityController = TextEditingController(
+        text: widget.teacher.availableTime
+                .toLowerCase()
+                .contains("add your availablity")
+            ? null
+            : widget.teacher.availableTime);
+  }
+  Future<String> uploadCertificate(file) async {
+    final storage = FirebaseStorage.instance;
+    final ref =
+        storage.ref().child('profileImages/${DateTime.now()}/$filename');
+    final uploadTask = ref.putFile(file);
+    final snapshot = await uploadTask;
+    final downloadUrl = await snapshot.ref.getDownloadURL();
+    this.profileUrl = downloadUrl;
+    profileUrl = downloadUrl;
+    print("profile URL:  ${profileUrl}");
+    return downloadUrl;
   }
 
   void saveChanges() {
@@ -51,19 +74,20 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
     String email = _emailController.text;
     String phone = _phoneController.text;
     String availability = _availabilityController.text;
+    
     Teacher teacher = Teacher(
-        id: id,
-        firstName: firstName,
-        lastName: lastName,
-        experience: experience,
-        address: address,
-        email: email,
-        phone: phone,
-        price: widget.teacher.price,
-        subject: widget.teacher.subject,
-        certificate: widget.teacher.certificate,
-        availableTime: availability,
-        );
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      experience: experience,
+      address: address,
+      email: email,
+      phone: phone,
+      price: widget.teacher.price,
+      subject: widget.teacher.subject,
+      certificate: widget.teacher.certificate,
+      availableTime: availability,
+    );
     teacherProvider
         .updateTeacher(teacher)
         .then((value) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -187,6 +211,52 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
                 ),
               ),
             ),
+                        SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: TextButton.icon(
+                onPressed: () async {
+                  FilePickerResult? result =
+                      await FilePicker.platform.pickFiles();
+                  PlatformFile file = result!.files.first;
+                  var file_size_bytes = file.size;
+                  var file_size_mb = file_size_bytes / 1000000;
+                  setState(() {
+                    this.selectedFile = File(file.path!);
+                    // this.size = file_size_mb;
+                    this.filename = file.name;
+                  });
+                  setState(() {
+                  isUploading = true;
+                  });
+                  String profileImageUrl =
+                      await uploadCertificate(this.selectedFile);
+                   setState(() {
+                  isUploading = false;
+                  widget.teacher.imgUrl = profileImageUrl;
+                  });
+                },
+                icon: Icon(Icons.attach_file),
+                label: Text('Upload Profile Image'),
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.grey),
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+                  ),
+                ),
+              ),
+            ),
+            filename != null
+                ? Text(filename!)
+                : Text("No certificate selected"),
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: saveChanges,

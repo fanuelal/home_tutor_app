@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:home_tutor_app/providers/teacherProvider.dart';
+import 'package:provider/provider.dart';
 import 'package:rate/rate.dart';
 import '../models/teacher.dart';
 
@@ -32,14 +34,17 @@ class TeacherDetail extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Rate(
-                  iconSize: 40,
-                  color: Colors.green,
-                  allowHalf: true,
-                  allowClear: true,
-                  initialValue: teacher.rate,
-                  readOnly: false,
-                  onChange: (value) => print(value),
-                ),
+                    iconSize: 40,
+                    color: Colors.green,
+                    allowHalf: true,
+                    allowClear: true,
+                    initialValue: teacher.rate,
+                    readOnly: false,
+                    onChange: (value) {
+                      teacher.rate = value;
+                      Provider.of<TeacherProvider>(context, listen: false)
+                          .updateTeacher(teacher);
+                    }),
                 SizedBox(height: 16),
                 Text(
                   '${teacher.firstName} ${teacher.lastName}',
