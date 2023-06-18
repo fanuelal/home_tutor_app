@@ -226,11 +226,6 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                                                     listen:
                                                                         false)
                                                                 .currentStudent;
-                                                        Provider.of<TeacherProvider>(
-                                                                context,
-                                                                listen: false)
-                                                            .updateTeacher(
-                                                                teacher);
 
                                                         await Provider.of<Payment>(
                                                                 context,
@@ -247,6 +242,11 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                                         setState(() {
                                                           teacher.isPaid = true;
                                                         });
+                                                        Provider.of<TeacherProvider>(
+                                                                context,
+                                                                listen: false)
+                                                            .updateTeacher(
+                                                                teacher);
                                                       },
                                                     ))
                                               : ElevatedButton.icon(
