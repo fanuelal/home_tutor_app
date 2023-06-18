@@ -258,7 +258,7 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
                 ? Text(filename!)
                 : Text("No certificate selected"),
             SizedBox(height: 16),
-            ElevatedButton(
+            isUploading? CircularProgressIndicator(): ElevatedButton(
               onPressed: saveChanges,
               child: Text(
                 'Save',
