@@ -44,7 +44,7 @@ class Teacher {
         lastName: json['lastName'],
         experience: json['experience'],
         availableTime: json['availableTime'] ?? '',
-        imgUrl: json['imgUrl'],
+        imgUrl: json['imgUrl'] ?? "",
         rate: json['rate'].toDouble(),
         description: json['description'],
         price: json['price'],

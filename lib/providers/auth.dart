@@ -15,7 +15,7 @@ class Auth extends ChangeNotifier {
   bool isAdmin = false;
   bool isAgent = false;
   bool get isAuth {
-    return token != '';
+    return _token != '';
   }
 
   late Student currentStudent;
@@ -41,10 +41,12 @@ class Auth extends ChangeNotifier {
     await authenticate(teacher.email, password, 'signUp', userType, context);
     String baseURL =
         'https://estudy-376aa-default-rtdb.firebaseio.com/teachers';
+    if (_userId != '') {
     final userDataUrl = Uri.parse("$baseURL/$_userId.json");
     final usedData =
         await http.put(userDataUrl, body: json.encode(teacher.toJson()));
     currentTeacher = teacher;
+    }
   }
 
   Future<void> studentSignUp(Student student, String password, String userType,
@@ -70,7 +72,7 @@ class Auth extends ChangeNotifier {
 
       currentStudent = Student.fromJson(responseData);
       currentStudent.id = userId;
-      print("isLogged IN: ${currentStudent.firstName}");
+      print("isLoged in${currentStudent.firstName}");
     } else {
       String teacherBaseUrl =
           'https://estudy-376aa-default-rtdb.firebaseio.com/teachers/$userId.json';
@@ -102,16 +104,18 @@ class Auth extends ChangeNotifier {
         ),
       );
       final responseData = json.decode(response.body);
-      print('responseData local id ${responseData['localId']}');
       if (responseData['error'] != null || responseData['localId'] == null) {
-        print(responseData['error']['message'].toString());
+        // print(responseData['error']['message'].toString());
         SnackBar snackBar = SnackBar(
             backgroundColor: Colors.red,
             content: Text(responseData['error']['message'].toString()));
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
         return;
       }
-      print(responseData['localId']);
+      // print("where is error");
+      // print(responseData['localId']);
+      // userEmail = email;
+      print('responseData local id ${responseData['idToken']}');
       _token = responseData['idToken'];
       _userId = responseData['localId'];
       if (segmentStr == 'signInWithPassword' || _token != '') {

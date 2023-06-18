@@ -150,40 +150,39 @@ class _StudentSignUpFormState extends State<StudentSignUpForm> {
                   ),
                 ),
                 Config.spaceSmall,
-                Consumer<Auth>(
-                  builder: (context, auth, child) {
-                    return Button(
-                      width: double.infinity,
-                      title: 'Sign Up',
-                      onPressed: () async {
-                        Student student = Student(
-                          firstName: _nameController.text,
-                          lastName: _lnameController.text,
-                          grade: int.parse(_gradeController.text),
-                          address: _addController.text,
-                          email: _emailController.text,
-                          phone: _phoneController.text,
-                        );
-                        setState(() {
-                          isLoagging = true;
-                        });
-                        await auth.studentSignUp(
-                            student, _passController.text, 'Student', context);
-                        setState(() {
-                          isLoagging = false;
-                        });
-                        if (auth.token != '') {
-                          MyApp.navigatorKey.currentState!
-                              .pushNamed('mainStudent');
-                        }
-                      },
-                      disable: false,
-                    );
-                  },
-                ),
                 isLoagging
-                    ? const CircularProgressIndicator()
-                    : const SizedBox.shrink(),
+                    ? CircularProgressIndicator()
+                    : Consumer<Auth>(
+                        builder: (context, auth, child) {
+                          return Button(
+                            width: double.infinity,
+                            title: 'Sign Up',
+                            onPressed: () async {
+                              setState(() {
+                                isLoagging = true;
+                              });
+                              Student student = Student(
+                                firstName: _nameController.text,
+                                lastName: _lnameController.text,
+                                grade: int.parse(_gradeController.text),
+                                address: _addController.text,
+                                email: _emailController.text,
+                                phone: _phoneController.text,
+                              );
+                              await auth.studentSignUp(student,
+                                  _passController.text, 'Student', context);
+                              setState(() {
+                                isLoagging = false;
+                              });
+                              if (auth.token != '') {
+                                MyApp.navigatorKey.currentState!
+                                    .pushNamed('mainStudent');
+                              }
+                            },
+                            disable: false,
+                          );
+                        },
+                      ),
               ],
             ),
           ),
@@ -216,6 +215,7 @@ class _TeacherSignUpFormState extends State<TeacherSignUpForm> {
   String certificateUrl = "";
   String? filename;
   File? selectedFile;
+  bool signingUp = false;
   @override
   Widget build(BuildContext context) {
     // ignore_for_file: prefer_single_quotes
@@ -387,41 +387,50 @@ class _TeacherSignUpFormState extends State<TeacherSignUpForm> {
               Config.spaceSmall,
               Consumer<Auth>(
                 builder: (context, auth, child) {
-                  return Button(
-                    width: double.infinity,
-                    title: 'Sign Up',
-                    onPressed: () async {
-                      await uploadCertificate(selectedFile);
-                      Teacher teacher = Teacher(
-                          firstName: _nameController.text,
-                          lastName: _lnameController.text,
-                          experience: int.parse(_expController.text),
-                          price: double.parse(_priceController.text),
-                          address: _addController.text,
-                          email: _emailController.text,
-                          phone: _phoneController.text,
-                          subject: _subjectController.text,
-                          certificate: certificateUrl);
-                      setState(() {
-                        isLogging = true;
-                      });
-                      await auth.teacherSignUp(
-                          teacher, _passController.text, 'Teacher', context);
-                      setState(() {
-                        isLogging = false;
-                      });
-                      if (auth.token != '') {
-                        MyApp.navigatorKey.currentState!
-                            .pushNamed('mainTeacher');
-                      }
-                    },
-                    disable: false,
-                  );
+                  return isLogging
+                      ? const CircularProgressIndicator()
+                      : Button(
+                          width: double.infinity,
+                          title: 'Sign Up',
+                          onPressed: () async {
+                            setState(() {
+                              isLogging = true;
+                              print(isLogging);
+                            });
+                            await uploadCertificate(selectedFile);
+                            Teacher teacher = Teacher(
+                                firstName: _nameController.text,
+                                lastName: _lnameController.text,
+                                experience: int.parse(_expController.text),
+                                price: double.parse(_priceController.text),
+                                address: _addController.text,
+                                email: _emailController.text,
+                                phone: _phoneController.text,
+                                subject: _subjectController.text,
+                                certificate: certificateUrl);
+                            // signingUp
+                            await auth.teacherSignUp(teacher,
+                                _passController.text, 'Teacher', context);
+                            setState(() {
+                              isLogging = false;
+                            });
+                            if (auth.isAuth) {
+                              MyApp.navigatorKey.currentState!
+                                  .pushNamed('mainTeacher');
+                            } else {
+                              SnackBar snackBar = SnackBar(
+                                backgroundColor: Colors.red,
+                                  content: Text("Please try to Sign IN!"));
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            }
+                          },
+                          disable: false,
+                        );
                 },
               ),
-              isLogging
-                  ? const CircularProgressIndicator()
-                  : const SizedBox.shrink(),
+
+              // : const SizedBox.shrink(),
             ],
           ),
         ),

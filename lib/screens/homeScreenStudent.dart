@@ -24,7 +24,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
   List<Teacher> _filteredTeachers = [];
   List<Teacher> _allTeachers = [];
   List<Request> _allMyRequest = [];
-
+  Student? currentStud;
   bool _isLoading = false;
   @override
   void initState() {
@@ -55,6 +55,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
     // await Provider.of<Auth>(context, listen: false)
     //     .getCurrentUser(auth.userId, 'Student');
     Student cStud = Provider.of<Auth>(context, listen: false).currentStudent;
+    currentStud = cStud;
     filterByAddress(cStud);
     setState(() {
       _isLoading = false;
@@ -104,7 +105,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
 
   @override
   Widget build(BuildContext context) {
-    Student cStud = Provider.of<Auth>(context, listen: false).currentStudent;
+    // Student cStud = Provider.of<Auth>(context, listen: false).currentStudent;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -116,10 +117,12 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                 MyApp.navigatorKey.currentState!.pushNamed('studentProfile');
               },
               child: CircleAvatar(
-                radius: 15,
-                backgroundImage: NetworkImage(
-                   cStud.imgUrl ?? 'https://logowik.com/content/uploads/images/810_student.jpg'),
-              ),
+  radius: 15,
+  backgroundImage: currentStud?.imgUrl != null && currentStud?.imgUrl != ""
+      ? NetworkImage(currentStud!.imgUrl!)
+      : NetworkImage('https://logowik.com/content/uploads/images/810_student.jpg'),
+),
+
             )),
         title: const Text('Choose Teacher'),
         actions: [
@@ -181,10 +184,9 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                   tileColor:
                                       teacher.requested ? Colors.green : null,
                                   leading: CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                      teacher.imgUrl ??
+                                    backgroundImage: teacher.imgUrl == "" && teacher.imgUrl == null ? NetworkImage(
                                           'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-                                    ),
+                                    ): NetworkImage(teacher.imgUrl!),
                                   ),
                                   title: Text(
                                       '${teacher.firstName} ${teacher.lastName}'),
@@ -229,9 +231,9 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                                                 listen: false)
                                                             .updateTeacher(
                                                                 teacher);
-                                                                setState(() {
-                                                        teacher.isPaid = true;
-                                                                });
+                                                        setState(() {
+                                                          teacher.isPaid = true;
+                                                        });
 
                                                         Provider.of<Payment>(
                                                                 context,

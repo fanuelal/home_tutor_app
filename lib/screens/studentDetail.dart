@@ -41,7 +41,10 @@ class _StudentDetailState extends State<StudentDetail> {
                         CircleAvatar(
                           radius: 80,
                           backgroundImage: NetworkImage(
-                              'https://static.vecteezy.com/system/resources/previews/008/845/857/original/illustration-student-get-an-idea-png.png'),
+                            student.data?.imgUrl ==
+                                  ""
+                              ? 'https://static.vecteezy.com/system/resources/previews/008/845/857/original/illustration-student-get-an-idea-png.png'
+                              : student.data?.imgUrl ?? ""),
                         ),
                         SizedBox(height: 16),
                         SizedBox(height: 16),

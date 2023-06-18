@@ -74,7 +74,7 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
     String email = _emailController.text;
     String phone = _phoneController.text;
     String availability = _availabilityController.text;
-    
+  
     Teacher teacher = Teacher(
       id: id,
       firstName: firstName,
@@ -87,6 +87,7 @@ class _EditTeacherProfilePageState extends State<EditTeacherProfilePage> {
       subject: widget.teacher.subject,
       certificate: widget.teacher.certificate,
       availableTime: availability,
+      imgUrl:  profileUrl
     );
     teacherProvider
         .updateTeacher(teacher)
