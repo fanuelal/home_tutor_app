@@ -53,7 +53,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
 
     // final auth = Provider.of<Auth>(context, listen: false);
     // await Provider.of<Auth>(context, listen: false)
-    //     .getCurrentUser(auth.userId, 'Student');
+    //     .getCurrentUser(userId, 'Student');
     Student cStud = Provider.of<Auth>(context, listen: false).currentStudent;
     currentStud = cStud;
     filterByAddress(cStud);
@@ -219,7 +219,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                                         size:
                                                             24, // Set the icon size if needed
                                                       ),
-                                                      onPressed: () {
+                                                      onPressed: () async{
                                                         Student cStud =
                                                             Provider.of<Auth>(
                                                                     context,
@@ -231,17 +231,22 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                                                                 listen: false)
                                                             .updateTeacher(
                                                                 teacher);
-                                                        setState(() {
-                                                          teacher.isPaid = true;
-                                                        });
 
-                                                        Provider.of<Payment>(
+                                                        await Provider.of<Payment>(
                                                                 context,
                                                                 listen: false)
                                                             .paymentFunc(
                                                                 context,
                                                                 cStud,
                                                                 100);
+
+                                                                Future.delayed(const Duration(seconds: 10), () {
+  // Code to be executed after the delay
+  print('Delayed code executed');
+});
+                                                        setState(() {
+                                                          teacher.isPaid = true;
+                                                        });
                                                       },
                                                     ))
                                               : ElevatedButton.icon(

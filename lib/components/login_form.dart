@@ -132,12 +132,23 @@ class _LoginFormState extends State<LoginForm> {
                       });
                       Student student;
                       Teacher teacher;
-                      if (auth.token != '') {
-                        selectedUserType == 'Student'
-                            ? MyApp.navigatorKey.currentState!
-                                .pushNamed('mainStudent')
-                            : MyApp.navigatorKey.currentState!
-                                .pushNamed('mainTeacher');
+                      print(auth.currentStudent);
+                      if (auth.currentStudent != null ||
+                          auth.currentTeacher != null) {
+                        if (auth.token != '') {
+                          selectedUserType == 'Student'
+                              ? MyApp.navigatorKey.currentState!
+                                  .pushNamed('mainStudent')
+                              : MyApp.navigatorKey.currentState!
+                                  .pushNamed('mainTeacher');
+                        }
+                      } else {
+                        print('Failed to loggin');
+                        SnackBar snackBar = SnackBar(
+                          backgroundColor: Colors.red,
+                          content: Text("user Data not found or deleted!"),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }
                     }
 
@@ -159,7 +170,7 @@ class _LoginFormState extends State<LoginForm> {
               );
             },
           ),
-           isLogging ? CircularProgressIndicator(): SizedBox.shrink(),
+          isLogging ? CircularProgressIndicator() : SizedBox.shrink(),
         ],
       ),
     );

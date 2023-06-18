@@ -17,7 +17,9 @@ class RequestProvider extends ChangeNotifier {
     final response = await http.patch(
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'status': newStatus}),
+      body: jsonEncode({'status': newStatus,
+      'isAccepted': true
+      }),
     );
     int index = currentUserRequests.indexWhere((req) => req.id == requestId);
     currentUserRequests[index].status = newStatus;

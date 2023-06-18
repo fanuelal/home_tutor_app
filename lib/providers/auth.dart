@@ -42,10 +42,10 @@ class Auth extends ChangeNotifier {
     String baseURL =
         'https://estudy-376aa-default-rtdb.firebaseio.com/teachers';
     if (_userId != '') {
-    final userDataUrl = Uri.parse("$baseURL/$_userId.json");
-    final usedData =
-        await http.put(userDataUrl, body: json.encode(teacher.toJson()));
-    currentTeacher = teacher;
+      final userDataUrl = Uri.parse("$baseURL/$_userId.json");
+      final usedData =
+          await http.put(userDataUrl, body: json.encode(teacher.toJson()));
+      currentTeacher = teacher;
     }
   }
 
@@ -62,24 +62,43 @@ class Auth extends ChangeNotifier {
     currentStudent = student;
   }
 
-  Future<void> getCurrentUser(String userId, String userType) async {
+  Future<void> getCurrentUser(
+      String userId, String userType, BuildContext context) async {
     if (userType == 'Student') {
       String studentBaseUrl =
           'https://estudy-376aa-default-rtdb.firebaseio.com/students/$userId.json';
-      final response = await http.get(Uri.parse(studentBaseUrl));
-      final responseData = json.decode(response.body);
-      if (json.decode(response.body) == null) return;
+      print(studentBaseUrl);
+      try {
+        final response = await http.get(Uri.parse(studentBaseUrl));
+        final responseData = json.decode(response.body);
+        // if (json.decode(response.body) == null) return;
 
-      currentStudent = Student.fromJson(responseData);
-      currentStudent.id = userId;
-      print("isLoged in${currentStudent.firstName}");
+        currentStudent = Student.fromJson(responseData);
+        currentStudent.id = userId;
+      } catch (error) {
+        print(error);
+        SnackBar snackBar = SnackBar(
+          backgroundColor: Colors.red,
+          content: Text("user Data not found or deleted!"),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      }
     } else {
       String teacherBaseUrl =
           'https://estudy-376aa-default-rtdb.firebaseio.com/teachers/$userId.json';
-      final response = await http.get(Uri.parse(teacherBaseUrl));
-      final responseData = json.decode(response.body);
-      currentTeacher = Teacher.fromJson(responseData);
-      currentTeacher.id = userId;
+      print(teacherBaseUrl);
+      try {
+        final response = await http.get(Uri.parse(teacherBaseUrl));
+        final responseData = json.decode(response.body);
+        currentTeacher = Teacher.fromJson(responseData);
+        currentTeacher.id = userId;
+      } catch (error) {
+       SnackBar snackBar = SnackBar(
+        backgroundColor: Colors.red,
+          content: Text('User Data not found or deleted!'),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      }
     }
     notifyListeners();
   }
@@ -115,11 +134,13 @@ class Auth extends ChangeNotifier {
       // print("where is error");
       // print(responseData['localId']);
       // userEmail = email;
-      print('responseData local id ${responseData['idToken']}');
+      // print('responseData local id ${responseData['idToken']}');
       _token = responseData['idToken'];
       _userId = responseData['localId'];
       if (segmentStr == 'signInWithPassword' || _token != '') {
-        await getCurrentUser(_userId, userType);
+        print('fetching your data');
+        await getCurrentUser(_userId, userType, context);
+        print('finished fetching your data');
       }
       String baseURL = '';
 
