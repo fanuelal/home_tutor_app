@@ -170,6 +170,7 @@ class _StudentSignUpFormState extends State<StudentSignUpForm> {
                         setState(() {
                           isLoagging = false;
                         });
+                        print(auth.token != '');
                         if (auth.token != '') {
                           MyApp.navigatorKey.currentState!
                               .pushNamed('mainStudent');
@@ -361,8 +362,8 @@ class _TeacherSignUpFormState extends State<TeacherSignUpForm> {
                   });
                   await auth.teacherSignUp(
                       teacher, _passController.text, 'Teacher', context);
-                  setState((){
-                  isLogging = false;
+                  setState(() {
+                    isLogging = false;
                   });
                   if (auth.token != '') {
                     MyApp.navigatorKey.currentState!.pushNamed('mainTeacher');

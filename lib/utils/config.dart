@@ -32,7 +32,7 @@ class Config {
     height: screenHeight! * 0.08,
   );
 
-  //textform field border
+  
   static const outlinedBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(8)),
   );
